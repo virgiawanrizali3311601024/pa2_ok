@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/pa2_ok/';
+$config['base_url'] = 'http://localhost/pa2_okk/';
 
 /*
 |--------------------------------------------------------------------------
