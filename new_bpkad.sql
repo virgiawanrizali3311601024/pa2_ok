@@ -10876,7 +10876,7 @@ ALTER TABLE `kib_a`
   ADD KEY `nama_aset` (`nama_aset`),
   ADD KEY `kode_lokasi_2` (`kode_lokasi`),
   ADD KEY `kode_lokasi_3` (`kode_lokasi`),
-  ADD KEY `nip` (`nip`);
+  
 
 --
 -- Indeks untuk tabel `kib_b`
