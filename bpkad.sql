@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2019 pada 18.19
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 5.6.39
+-- Generation Time: May 23, 2019 at 07:44 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `new_bpkad`
+-- Database: `bpkad`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bidang`
+-- Table structure for table `bidang`
 --
 
 CREATE TABLE `bidang` (
@@ -35,7 +33,7 @@ CREATE TABLE `bidang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `bidang`
+-- Dumping data for table `bidang`
 --
 
 INSERT INTO `bidang` (`id_golongan`, `id_bidang`, `nama_bidang`) VALUES
@@ -62,7 +60,7 @@ INSERT INTO `bidang` (`id_golongan`, `id_bidang`, `nama_bidang`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `golongan`
+-- Table structure for table `golongan`
 --
 
 CREATE TABLE `golongan` (
@@ -71,7 +69,7 @@ CREATE TABLE `golongan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `golongan`
+-- Dumping data for table `golongan`
 --
 
 INSERT INTO `golongan` (`id_golongan`, `nama_golongan`) VALUES
@@ -85,7 +83,7 @@ INSERT INTO `golongan` (`id_golongan`, `nama_golongan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelompok`
+-- Table structure for table `kelompok`
 --
 
 CREATE TABLE `kelompok` (
@@ -96,7 +94,7 @@ CREATE TABLE `kelompok` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kelompok`
+-- Dumping data for table `kelompok`
 --
 
 INSERT INTO `kelompok` (`id_golongan`, `id_bidang`, `id_kelompok`, `nama_kelompok`) VALUES
@@ -196,7 +194,7 @@ INSERT INTO `kelompok` (`id_golongan`, `id_bidang`, `id_kelompok`, `nama_kelompo
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kib_a`
+-- Table structure for table `kib_a`
 --
 
 CREATE TABLE `kib_a` (
@@ -222,7 +220,7 @@ CREATE TABLE `kib_a` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kib_a`
+-- Dumping data for table `kib_a`
 --
 
 INSERT INTO `kib_a` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `luas`, `tahun_pengadaan`, `alamat`, `status_tanah`, `tanggal_sertifikat`, `nomor_sertifikat`, `asal_usul`, `harga`, `kondisi`, `keterangan`, `foto_fisik`, `kontrak`, `kode_lokasi`, `status`, `nip`) VALUES
@@ -235,7 +233,7 @@ INSERT INTO `kib_a` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `luas`, `t
 (9, 'Makam Umum/Kuburan Umum', '01.01.01.03.008.', 00001, '-', '2019', '-', '-', '2019-05-03', '-', '-', '9000000000.00', 'B', '-', '1558424046811.jpg', '1558424046811.pdf', '32.04.028.00.00.00.', 'disetujui', '');
 
 --
--- Trigger `kib_a`
+-- Triggers `kib_a`
 --
 DELIMITER $$
 CREATE TRIGGER `deletelog_kib_a` AFTER DELETE ON `kib_a` FOR EACH ROW BEGIN
@@ -342,7 +340,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kib_b`
+-- Table structure for table `kib_b`
 --
 
 CREATE TABLE `kib_b` (
@@ -374,7 +372,7 @@ CREATE TABLE `kib_b` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kib_b`
+-- Dumping data for table `kib_b`
 --
 
 INSERT INTO `kib_b` (`id_aset`, `kode_aset`, `register`, `nama_aset`, `merk`, `ukuran`, `bahan`, `tahun_pengadaan`, `lokasi`, `pabrik`, `no_rangka`, `no_mesin`, `no_polisi`, `bpkb`, `asal_usul`, `penggunaan`, `harga`, `kondisi`, `keterangan`, `kode_lokasi`, `status`, `foto_fisik`, `kontrak`, `qrcode`, `nip`) VALUES
@@ -732,7 +730,7 @@ INSERT INTO `kib_b` (`id_aset`, `kode_aset`, `register`, `nama_aset`, `merk`, `u
 (353, '02.06.03.02.001.', 00013, 'P.C. Unit', '-', '-', '-', '2019', '-', '-', '-', '-', '-', '-', '-', '-', '9000000000.00', 'B', '-', '32.04.028.00.00.00.', 'belum disetujui', '1558423599161.jpg', '1558423599161.pdf', NULL, '');
 
 --
--- Trigger `kib_b`
+-- Triggers `kib_b`
 --
 DELIMITER $$
 CREATE TRIGGER `deletelog_kib_b` AFTER DELETE ON `kib_b` FOR EACH ROW BEGIN
@@ -860,7 +858,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kib_c`
+-- Table structure for table `kib_c`
 --
 
 CREATE TABLE `kib_c` (
@@ -890,7 +888,7 @@ CREATE TABLE `kib_c` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kib_c`
+-- Dumping data for table `kib_c`
 --
 
 INSERT INTO `kib_c` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `kondisi`, `bertingkat`, `beton_tidak`, `luas_lantai`, `tahun_pengadaan`, `alamat`, `nomor_dokumen_gedung`, `tanggal_dokumen`, `status_tanah`, `nomor_kode_tanah`, `luas_tanah`, `asal_usul`, `harga`, `keterangan`, `foto_fisik`, `kontrak`, `kode_lokasi`, `status`, `nip`) VALUES
@@ -904,7 +902,7 @@ INSERT INTO `kib_c` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `kondisi`,
 (8, 'Konsultan Perencana Bangunan Gedung Laboratorium', '03.11.01.05.004.', 00012, 'B', 'tidak', 'ya', '300', '2018', 'batam', '9090', '2019-04-02', '-', '-', '-', '-', '500.00', '-', '', '', '32.04.011.00.00.00.', 'disetujui', '');
 
 --
--- Trigger `kib_c`
+-- Triggers `kib_c`
 --
 DELIMITER $$
 CREATE TRIGGER `deletelog_kib_c` AFTER DELETE ON `kib_c` FOR EACH ROW BEGIN
@@ -1024,7 +1022,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kib_d`
+-- Table structure for table `kib_d`
 --
 
 CREATE TABLE `kib_d` (
@@ -1054,7 +1052,7 @@ CREATE TABLE `kib_d` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kib_d`
+-- Dumping data for table `kib_d`
 --
 
 INSERT INTO `kib_d` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `konstruksi`, `panjang`, `lebar`, `luas`, `alamat`, `tahun_pengadaan`, `tanggal_dokumen`, `nomor_dokumen`, `status_tanah`, `nomor_kode_tanah`, `asal_usul`, `harga`, `kondisi`, `keterangan`, `foto_fisik`, `kontrak`, `kode_lokasi`, `status`, `nip`) VALUES
@@ -1068,7 +1066,7 @@ INSERT INTO `kib_d` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `konstruks
 (8, 'Jalan Lingkungan', '04.13.01.05.010.', 00013, 'k.o', '300', '300', '300', 'sukajadi', '2018', '2019-03-17', '909090', '-', '-', '-', '90.00', 'B', '-', '', '', '32.04.011.00.00.00.', 'disetujui', '');
 
 --
--- Trigger `kib_d`
+-- Triggers `kib_d`
 --
 DELIMITER $$
 CREATE TRIGGER `deletelog_kib_d` AFTER DELETE ON `kib_d` FOR EACH ROW BEGIN
@@ -1188,7 +1186,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kib_e`
+-- Table structure for table `kib_e`
 --
 
 CREATE TABLE `kib_e` (
@@ -1213,7 +1211,7 @@ CREATE TABLE `kib_e` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kib_e`
+-- Dumping data for table `kib_e`
 --
 
 INSERT INTO `kib_e` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `judul_buku`, `spesifikasi_buku`, `tahun_pengadaan`, `nomor_dokumen`, `tanggal_dokumen`, `asal_usul`, `harga`, `kondisi`, `keterangan`, `foto_fisik`, `kontrak`, `kode_lokasi`, `status`, `nip`) VALUES
@@ -1229,7 +1227,7 @@ INSERT INTO `kib_e` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `judul_buk
 (10, 'Kimia', '05.17.01.06.004.', 00002, '-', '-', '2019', '--', '2019-05-16', '-', '9000000.00', 'B', '-', '1558423239667.jpg', '1558423239667.pdf', '32.04.028.00.00.00.', 'belum disetujui', '');
 
 --
--- Trigger `kib_e`
+-- Triggers `kib_e`
 --
 DELIMITER $$
 CREATE TRIGGER `deletelog_kib_e` AFTER DELETE ON `kib_e` FOR EACH ROW BEGIN
@@ -1329,7 +1327,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kib_f`
+-- Table structure for table `kib_f`
 --
 
 CREATE TABLE `kib_f` (
@@ -1357,7 +1355,7 @@ CREATE TABLE `kib_f` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Trigger `kib_f`
+-- Triggers `kib_f`
 --
 DELIMITER $$
 CREATE TRIGGER `deletelog_kib_f` AFTER DELETE ON `kib_f` FOR EACH ROW BEGIN
@@ -1469,7 +1467,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `skpd`
+-- Table structure for table `skpd`
 --
 
 CREATE TABLE `skpd` (
@@ -1478,7 +1476,7 @@ CREATE TABLE `skpd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `skpd`
+-- Dumping data for table `skpd`
 --
 
 INSERT INTO `skpd` (`nama_skpd`, `kode_lokasi`) VALUES
@@ -1530,7 +1528,7 @@ INSERT INTO `skpd` (`nama_skpd`, `kode_lokasi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sub_kelompok`
+-- Table structure for table `sub_kelompok`
 --
 
 CREATE TABLE `sub_kelompok` (
@@ -1542,7 +1540,7 @@ CREATE TABLE `sub_kelompok` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `sub_kelompok`
+-- Dumping data for table `sub_kelompok`
 --
 
 INSERT INTO `sub_kelompok` (`id_golongan`, `id_bidang`, `id_kelompok`, `id_sub_kelompok`, `nama_sub_kelompok`) VALUES
@@ -2128,7 +2126,7 @@ INSERT INTO `sub_kelompok` (`id_golongan`, `id_bidang`, `id_kelompok`, `id_sub_k
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sub_sub_kelompok`
+-- Table structure for table `sub_sub_kelompok`
 --
 
 CREATE TABLE `sub_sub_kelompok` (
@@ -2142,7 +2140,7 @@ CREATE TABLE `sub_sub_kelompok` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `sub_sub_kelompok`
+-- Dumping data for table `sub_sub_kelompok`
 --
 
 INSERT INTO `sub_sub_kelompok` (`id_golongan`, `id_bidang`, `id_kelompok`, `id_sub_kelompok`, `id_sub_sub_kelompok`, `kode_aset`, `nama_aset`) VALUES
@@ -10429,7 +10427,7 @@ INSERT INTO `sub_sub_kelompok` (`id_golongan`, `id_bidang`, `id_kelompok`, `id_s
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `temporary_kib_a`
+-- Table structure for table `temporary_kib_a`
 --
 
 CREATE TABLE `temporary_kib_a` (
@@ -10456,7 +10454,7 @@ CREATE TABLE `temporary_kib_a` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `temporary_kib_a`
+-- Dumping data for table `temporary_kib_a`
 --
 
 INSERT INTO `temporary_kib_a` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `luas`, `tahun_pengadaan`, `alamat`, `status_tanah`, `tanggal_sertifikat`, `nomor_sertifikat`, `asal_usul`, `harga`, `kondisi`, `keterangan`, `foto_fisik`, `kontrak`, `kode_lokasi`, `tgl_perubahan`, `nip`, `action`) VALUES
@@ -10511,7 +10509,7 @@ INSERT INTO `temporary_kib_a` (`id_aset`, `nama_aset`, `kode_aset`, `register`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `temporary_kib_b`
+-- Table structure for table `temporary_kib_b`
 --
 
 CREATE TABLE `temporary_kib_b` (
@@ -10544,7 +10542,7 @@ CREATE TABLE `temporary_kib_b` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `temporary_kib_b`
+-- Dumping data for table `temporary_kib_b`
 --
 
 INSERT INTO `temporary_kib_b` (`id_aset`, `kode_aset`, `register`, `nama_aset`, `merk`, `ukuran`, `bahan`, `tahun_pengadaan`, `lokasi`, `pabrik`, `no_rangka`, `no_mesin`, `no_polisi`, `bpkb`, `asal_usul`, `penggunaan`, `harga`, `kondisi`, `keterangan`, `kode_lokasi`, `foto_fisik`, `kontrak`, `qrcode`, `tgl_perubahan`, `nip`, `action`) VALUES
@@ -10655,7 +10653,7 @@ INSERT INTO `temporary_kib_b` (`id_aset`, `kode_aset`, `register`, `nama_aset`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `temporary_kib_c`
+-- Table structure for table `temporary_kib_c`
 --
 
 CREATE TABLE `temporary_kib_c` (
@@ -10686,7 +10684,7 @@ CREATE TABLE `temporary_kib_c` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `temporary_kib_c`
+-- Dumping data for table `temporary_kib_c`
 --
 
 INSERT INTO `temporary_kib_c` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `kondisi`, `bertingkat`, `beton_tidak`, `luas_lantai`, `tahun_pengadaan`, `alamat`, `nomor_dokumen_gedung`, `tanggal_dokumen`, `status_tanah`, `nomor_kode_tanah`, `luas_tanah`, `asal_usul`, `harga`, `keterangan`, `foto_fisik`, `kontrak`, `kode_lokasi`, `tgl_perubahan`, `nip`, `action`) VALUES
@@ -10701,7 +10699,7 @@ INSERT INTO `temporary_kib_c` (`id_aset`, `nama_aset`, `kode_aset`, `register`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `temporary_kib_d`
+-- Table structure for table `temporary_kib_d`
 --
 
 CREATE TABLE `temporary_kib_d` (
@@ -10732,7 +10730,7 @@ CREATE TABLE `temporary_kib_d` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `temporary_kib_d`
+-- Dumping data for table `temporary_kib_d`
 --
 
 INSERT INTO `temporary_kib_d` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `konstruksi`, `panjang`, `lebar`, `luas`, `alamat`, `tahun_pengadaan`, `tanggal_dokumen`, `nomor_dokumen`, `status_tanah`, `nomor_kode_tanah`, `asal_usul`, `harga`, `kondisi`, `keterangan`, `foto_fisik`, `kontrak`, `kode_lokasi`, `tgl_perubahan`, `nip`, `action`) VALUES
@@ -10745,7 +10743,7 @@ INSERT INTO `temporary_kib_d` (`id_aset`, `nama_aset`, `kode_aset`, `register`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `temporary_kib_e`
+-- Table structure for table `temporary_kib_e`
 --
 
 CREATE TABLE `temporary_kib_e` (
@@ -10771,7 +10769,7 @@ CREATE TABLE `temporary_kib_e` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `temporary_kib_e`
+-- Dumping data for table `temporary_kib_e`
 --
 
 INSERT INTO `temporary_kib_e` (`id_aset`, `nama_aset`, `kode_aset`, `register`, `judul_buku`, `spesifikasi_buku`, `tahun_pengadaan`, `nomor_dokumen`, `tanggal_dokumen`, `asal_usul`, `harga`, `kondisi`, `keterangan`, `foto_fisik`, `kontrak`, `kode_lokasi`, `tgl_perubahan`, `nip`, `action`) VALUES
@@ -10783,7 +10781,7 @@ INSERT INTO `temporary_kib_e` (`id_aset`, `nama_aset`, `kode_aset`, `register`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `temporary_kib_f`
+-- Table structure for table `temporary_kib_f`
 --
 
 CREATE TABLE `temporary_kib_f` (
@@ -10814,7 +10812,7 @@ CREATE TABLE `temporary_kib_f` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -10826,7 +10824,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`nip`, `tipe_user`, `password`, `nama`, `kode_lokasi`) VALUES
@@ -10844,20 +10842,20 @@ INSERT INTO `user` (`nip`, `tipe_user`, `password`, `nama`, `kode_lokasi`) VALUE
 --
 
 --
--- Indeks untuk tabel `bidang`
+-- Indexes for table `bidang`
 --
 ALTER TABLE `bidang`
   ADD PRIMARY KEY (`id_bidang`),
   ADD KEY `id_golongan` (`id_golongan`);
 
 --
--- Indeks untuk tabel `golongan`
+-- Indexes for table `golongan`
 --
 ALTER TABLE `golongan`
   ADD PRIMARY KEY (`id_golongan`);
 
 --
--- Indeks untuk tabel `kelompok`
+-- Indexes for table `kelompok`
 --
 ALTER TABLE `kelompok`
   ADD KEY `id_bidang` (`id_bidang`,`id_golongan`),
@@ -10867,7 +10865,7 @@ ALTER TABLE `kelompok`
   ADD KEY `id_kelompok_2` (`id_kelompok`);
 
 --
--- Indeks untuk tabel `kib_a`
+-- Indexes for table `kib_a`
 --
 ALTER TABLE `kib_a`
   ADD PRIMARY KEY (`id_aset`),
@@ -10875,20 +10873,20 @@ ALTER TABLE `kib_a`
   ADD KEY `kode_aset` (`kode_aset`),
   ADD KEY `nama_aset` (`nama_aset`),
   ADD KEY `kode_lokasi_2` (`kode_lokasi`),
-  ADD KEY `kode_lokasi_3` (`kode_lokasi`),
-  
+  ADD KEY `kode_lokasi_3` (`kode_lokasi`);
 
 --
--- Indeks untuk tabel `kib_b`
+-- Indexes for table `kib_b`
 --
 ALTER TABLE `kib_b`
   ADD PRIMARY KEY (`id_aset`),
   ADD KEY `kib_b_ibfk_1` (`kode_aset`),
   ADD KEY `kib_b_ibfk_2` (`nama_aset`),
-  ADD KEY `kode_lokasi` (`kode_lokasi`);
+  ADD KEY `kode_lokasi` (`kode_lokasi`),
+  ADD KEY `nip_2` (`nip`);
 
 --
--- Indeks untuk tabel `kib_c`
+-- Indexes for table `kib_c`
 --
 ALTER TABLE `kib_c`
   ADD PRIMARY KEY (`id_aset`),
@@ -10898,7 +10896,7 @@ ALTER TABLE `kib_c`
   ADD KEY `kode_lokasi_2` (`kode_lokasi`);
 
 --
--- Indeks untuk tabel `kib_d`
+-- Indexes for table `kib_d`
 --
 ALTER TABLE `kib_d`
   ADD PRIMARY KEY (`id_aset`),
@@ -10909,7 +10907,7 @@ ALTER TABLE `kib_d`
   ADD KEY `kode_lokasi_3` (`kode_lokasi`);
 
 --
--- Indeks untuk tabel `kib_e`
+-- Indexes for table `kib_e`
 --
 ALTER TABLE `kib_e`
   ADD PRIMARY KEY (`id_aset`),
@@ -10919,7 +10917,7 @@ ALTER TABLE `kib_e`
   ADD KEY `kode_lokasi_2` (`kode_lokasi`);
 
 --
--- Indeks untuk tabel `kib_f`
+-- Indexes for table `kib_f`
 --
 ALTER TABLE `kib_f`
   ADD PRIMARY KEY (`id_aset`),
@@ -10929,13 +10927,13 @@ ALTER TABLE `kib_f`
   ADD KEY `kode_lokasi_2` (`kode_lokasi`);
 
 --
--- Indeks untuk tabel `skpd`
+-- Indexes for table `skpd`
 --
 ALTER TABLE `skpd`
   ADD PRIMARY KEY (`kode_lokasi`);
 
 --
--- Indeks untuk tabel `sub_kelompok`
+-- Indexes for table `sub_kelompok`
 --
 ALTER TABLE `sub_kelompok`
   ADD KEY `id_bidang` (`id_bidang`),
@@ -10944,7 +10942,7 @@ ALTER TABLE `sub_kelompok`
   ADD KEY `id_sub_kelompok` (`id_sub_kelompok`);
 
 --
--- Indeks untuk tabel `sub_sub_kelompok`
+-- Indexes for table `sub_sub_kelompok`
 --
 ALTER TABLE `sub_sub_kelompok`
   ADD PRIMARY KEY (`kode_aset`),
@@ -10956,7 +10954,7 @@ ALTER TABLE `sub_sub_kelompok`
   ADD KEY `nama_sub_sub_kelompok` (`nama_aset`);
 
 --
--- Indeks untuk tabel `temporary_kib_a`
+-- Indexes for table `temporary_kib_a`
 --
 ALTER TABLE `temporary_kib_a`
   ADD PRIMARY KEY (`tgl_perubahan`),
@@ -10968,7 +10966,7 @@ ALTER TABLE `temporary_kib_a`
   ADD KEY `id_aset` (`id_aset`);
 
 --
--- Indeks untuk tabel `temporary_kib_b`
+-- Indexes for table `temporary_kib_b`
 --
 ALTER TABLE `temporary_kib_b`
   ADD PRIMARY KEY (`tgl_perubahan`),
@@ -10978,7 +10976,7 @@ ALTER TABLE `temporary_kib_b`
   ADD KEY `id_aset` (`id_aset`);
 
 --
--- Indeks untuk tabel `temporary_kib_c`
+-- Indexes for table `temporary_kib_c`
 --
 ALTER TABLE `temporary_kib_c`
   ADD PRIMARY KEY (`tgl_perubahan`),
@@ -10989,7 +10987,7 @@ ALTER TABLE `temporary_kib_c`
   ADD KEY `id_aset` (`id_aset`);
 
 --
--- Indeks untuk tabel `temporary_kib_d`
+-- Indexes for table `temporary_kib_d`
 --
 ALTER TABLE `temporary_kib_d`
   ADD PRIMARY KEY (`tgl_perubahan`),
@@ -11001,7 +10999,7 @@ ALTER TABLE `temporary_kib_d`
   ADD KEY `id_aset` (`id_aset`);
 
 --
--- Indeks untuk tabel `temporary_kib_e`
+-- Indexes for table `temporary_kib_e`
 --
 ALTER TABLE `temporary_kib_e`
   ADD PRIMARY KEY (`tgl_perubahan`),
@@ -11012,7 +11010,7 @@ ALTER TABLE `temporary_kib_e`
   ADD KEY `id_aset` (`id_aset`);
 
 --
--- Indeks untuk tabel `temporary_kib_f`
+-- Indexes for table `temporary_kib_f`
 --
 ALTER TABLE `temporary_kib_f`
   ADD PRIMARY KEY (`tgl_perubahan`),
@@ -11023,112 +11021,106 @@ ALTER TABLE `temporary_kib_f`
   ADD KEY `id_aset` (`id_aset`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`nip`,`kode_lokasi`),
   ADD KEY `kode_lokasi` (`kode_lokasi`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `kib_a`
+-- AUTO_INCREMENT for table `kib_a`
 --
 ALTER TABLE `kib_a`
   MODIFY `id_aset` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
--- AUTO_INCREMENT untuk tabel `kib_b`
+-- AUTO_INCREMENT for table `kib_b`
 --
 ALTER TABLE `kib_b`
   MODIFY `id_aset` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=354;
-
 --
--- AUTO_INCREMENT untuk tabel `kib_c`
+-- AUTO_INCREMENT for table `kib_c`
 --
 ALTER TABLE `kib_c`
   MODIFY `id_aset` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
--- AUTO_INCREMENT untuk tabel `kib_d`
+-- AUTO_INCREMENT for table `kib_d`
 --
 ALTER TABLE `kib_d`
   MODIFY `id_aset` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
--- AUTO_INCREMENT untuk tabel `kib_e`
+-- AUTO_INCREMENT for table `kib_e`
 --
 ALTER TABLE `kib_e`
   MODIFY `id_aset` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
--- AUTO_INCREMENT untuk tabel `kib_f`
+-- AUTO_INCREMENT for table `kib_f`
 --
 ALTER TABLE `kib_f`
   MODIFY `id_aset` int(25) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `bidang`
+-- Constraints for table `bidang`
 --
 ALTER TABLE `bidang`
   ADD CONSTRAINT `bidang_ibfk_1` FOREIGN KEY (`id_golongan`) REFERENCES `golongan` (`id_golongan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kelompok`
+-- Constraints for table `kelompok`
 --
 ALTER TABLE `kelompok`
   ADD CONSTRAINT `kelompok_ibfk_1` FOREIGN KEY (`id_golongan`) REFERENCES `golongan` (`id_golongan`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kelompok_ibfk_2` FOREIGN KEY (`id_bidang`) REFERENCES `bidang` (`id_bidang`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kib_a`
+-- Constraints for table `kib_a`
 --
 ALTER TABLE `kib_a`
   ADD CONSTRAINT `kib_a_ibfk_1` FOREIGN KEY (`kode_aset`) REFERENCES `sub_sub_kelompok` (`kode_aset`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kib_a_ibfk_2` FOREIGN KEY (`kode_lokasi`) REFERENCES `skpd` (`kode_lokasi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kib_b`
+-- Constraints for table `kib_b`
 --
 ALTER TABLE `kib_b`
   ADD CONSTRAINT `kib_b_ibfk_1` FOREIGN KEY (`kode_aset`) REFERENCES `sub_sub_kelompok` (`kode_aset`);
 
 --
--- Ketidakleluasaan untuk tabel `kib_c`
+-- Constraints for table `kib_c`
 --
 ALTER TABLE `kib_c`
   ADD CONSTRAINT `kib_c_ibfk_1` FOREIGN KEY (`kode_aset`) REFERENCES `sub_sub_kelompok` (`kode_aset`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kib_c_ibfk_2` FOREIGN KEY (`kode_lokasi`) REFERENCES `skpd` (`kode_lokasi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kib_d`
+-- Constraints for table `kib_d`
 --
 ALTER TABLE `kib_d`
   ADD CONSTRAINT `kib_d_ibfk_1` FOREIGN KEY (`kode_aset`) REFERENCES `sub_sub_kelompok` (`kode_aset`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kib_d_ibfk_2` FOREIGN KEY (`kode_lokasi`) REFERENCES `skpd` (`kode_lokasi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kib_e`
+-- Constraints for table `kib_e`
 --
 ALTER TABLE `kib_e`
   ADD CONSTRAINT `kib_e_ibfk_1` FOREIGN KEY (`kode_aset`) REFERENCES `sub_sub_kelompok` (`kode_aset`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kib_e_ibfk_2` FOREIGN KEY (`kode_lokasi`) REFERENCES `skpd` (`kode_lokasi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kib_f`
+-- Constraints for table `kib_f`
 --
 ALTER TABLE `kib_f`
   ADD CONSTRAINT `kib_f_ibfk_2` FOREIGN KEY (`kode_lokasi`) REFERENCES `skpd` (`kode_lokasi`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kib_f_ibfk_3` FOREIGN KEY (`kode_aset`) REFERENCES `sub_sub_kelompok` (`kode_aset`);
 
 --
--- Ketidakleluasaan untuk tabel `sub_kelompok`
+-- Constraints for table `sub_kelompok`
 --
 ALTER TABLE `sub_kelompok`
   ADD CONSTRAINT `sub_kelompok_ibfk_3` FOREIGN KEY (`id_kelompok`) REFERENCES `kelompok` (`id_kelompok`) ON UPDATE CASCADE,
@@ -11136,7 +11128,7 @@ ALTER TABLE `sub_kelompok`
   ADD CONSTRAINT `sub_kelompok_ibfk_5` FOREIGN KEY (`id_golongan`) REFERENCES `golongan` (`id_golongan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `sub_sub_kelompok`
+-- Constraints for table `sub_sub_kelompok`
 --
 ALTER TABLE `sub_sub_kelompok`
   ADD CONSTRAINT `sub_sub_kelompok_ibfk_1` FOREIGN KEY (`id_golongan`) REFERENCES `golongan` (`id_golongan`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -11145,11 +11137,10 @@ ALTER TABLE `sub_sub_kelompok`
   ADD CONSTRAINT `sub_sub_kelompok_ibfk_4` FOREIGN KEY (`id_sub_kelompok`) REFERENCES `sub_kelompok` (`id_sub_kelompok`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `user`
+-- Constraints for table `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`kode_lokasi`) REFERENCES `skpd` (`kode_lokasi`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
