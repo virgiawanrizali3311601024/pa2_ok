@@ -502,9 +502,44 @@ class Pengurus_barang extends CI_Controller {
 			$random 		     = $this->input->post("random");
 			$kode_lokasi 		 = $this->input->post("kode_lokasi");
 			$status 		     = $this->input->post("status");
-			
+			$qrcode 		     = $this->input->post("image_name");
 
-			
+			$this->load->library('ciqrcode'); //pemanggilan library QR CODE
+
+				$config['cacheable']	= true; //boolean, the default is true
+				$config['cachedir']		= './assets/'; //string, the default is application/cache/
+				$config['errorlog']		= './assets/'; //string, the default is application/logs/
+				$config['imagedir']		= './assets/berkas/qrcode/'; //direktori penyimpanan qr code
+				$config['quality']		= true; //boolean, the default is true
+				$config['size']			= '1024'; //interger, the default is 1024
+				$config['black']		= array(224,255,255); // array, default is array(255,255,255)
+				$config['white']		= array(70,130,180); // array, default is array(0,0,0)
+				$this->ciqrcode->initialize($config);
+
+				$image_name=$kode_aset.$register.$random.'.png'; //buat name dari qr code sesuai dengan nim
+
+				$params['data'] = ("		  Nama Aset: ".$nama_aset."
+				Kode Aset: ".$kode_aset."
+				Register: ".$register."
+				Merk: ".$merk."
+				Ukuran: ".$ukuran."
+				Bahan: ".$bahan."
+				Tahun: ".$tahun_pengadaan."
+				Pabrik: ".$pabrik."
+				No. Rangka: ".$no_rangka."
+				No. Mesin: ".$no_mesin."
+				No. Polisi: ".$no_polisi."
+				Bpkb: ".$bpkb."
+				Asal Usul: ".$asal_usul."
+				Harga: ".$harga."
+				Kode Lokasi: ".$kode_lokasi); //data yang akan di jadikan QR CODE
+				//$params['data'] = $nim; 
+				$params['level'] = 'H'; //H=High
+				$params['size'] = 10;
+				$params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
+				$this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+
+                
 			$data_b=array();
 		for($i = 0; $i < $jumlah; $i++)  {
 		$data_b = array(
@@ -531,11 +566,45 @@ class Pengurus_barang extends CI_Controller {
 			'kontrak' 		     => $kontrak,
 			'kode_lokasi' 		 => $kode_lokasi,
 			'status' 		     => $status,
-			
+			'qrcode' 		     => $image_name,
 			
 		);
 		$register = $register + 1;
-		
+		$this->load->library('ciqrcode'); //pemanggilan library QR CODE
+
+				$config['cacheable']	= true; //boolean, the default is true
+				$config['cachedir']		= './assets/'; //string, the default is application/cache/
+				$config['errorlog']		= './assets/'; //string, the default is application/logs/
+				$config['imagedir']		= './assets/berkas/qrcode/'; //direktori penyimpanan qr code
+				$config['quality']		= true; //boolean, the default is true
+				$config['size']			= '1024'; //interger, the default is 1024
+				$config['black']		= array(224,255,255); // array, default is array(255,255,255)
+				$config['white']		= array(70,130,180); // array, default is array(0,0,0)
+				$this->ciqrcode->initialize($config);
+
+				$image_name=$kode_aset.$register.$random.'.png'; //buat name dari qr code sesuai dengan nim
+
+				$params['data'] = ("		  Nama Aset: ".$nama_aset."
+				Kode Aset: ".$kode_aset."
+				Register: ".$register."
+				Merk: ".$merk."
+				Ukuran: ".$ukuran."
+				Bahan: ".$bahan."
+				Tahun: ".$tahun_pengadaan."
+				Pabrik: ".$pabrik."
+				No. Rangka: ".$no_rangka."
+				No. Mesin: ".$no_mesin."
+				No. Polisi: ".$no_polisi."
+				Bpkb: ".$bpkb."
+				Asal Usul: ".$asal_usul."
+				Harga: ".$harga."
+				Kode Lokasi: ".$kode_lokasi); //data yang akan di jadikan QR CODE
+				//$params['data'] = $nim; 
+				$params['level'] = 'H'; //H=High
+				$params['size'] = 10;
+				$params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
+				$this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+
                
 			
 		if (!empty($_FILES['foto_fisik']['name'])) {
