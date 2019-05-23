@@ -1490,6 +1490,14 @@ class Staff_bpkad_model extends CI_Model {
 	
 	
 	
+	function get_asetb($idaset)
+	{
+		$this->db->from('kib_b');
+		$this->db->where('id_aset',$idaset);
+		$query = $this->db->get();
+
+		return $query->row();
+	}
 
 	function get_id_kiba_masukan($idaset)
 	{
@@ -1734,11 +1742,14 @@ class Staff_bpkad_model extends CI_Model {
 		 $this->db->where('id_aset', $id_aset); 
 		 $this->db->update('kib_a');
 	}
-	function updatestatus_b($id_aset)
+	function updatestatus_b($id_aset,$image_name)
 	{
-		 $this->db->set('status', 'disetujui');
+		$data = array(
+			'status' => 'disetujui',
+			'qrcode' => $image_name
+		);
 		 $this->db->where('id_aset', $id_aset); 
-		 $this->db->update('kib_b');
+		 $this->db->update('kib_b', $data);
 	}
 	 function updatestatus_c($id_aset)
 	{
