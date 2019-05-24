@@ -41,6 +41,7 @@
                             <div class="col-xs-2">
                                 <label>NIP</label>
                                 <input name="nip" value="<?php echo $data->nip; ?>" placeholder="NIP" class="form-control" type="number">
+                                <input name="niplama" value="<?php echo $data->nip; ?>" placeholder="NIP" class="form-control" type="hidden">
                                 <?php echo form_error('nip'); ?>
                             </div>
                             <div class="col-xs-3">
@@ -65,6 +66,7 @@
                                     <option value="<?php echo $data->kode_lokasi; ?>"<?php if($lokasi->kode_lokasi==$data->kode_lokasi) echo 'selected="selected"'; ?>><?php echo $lokasi->kode_lokasi; ?>--<?php echo $lokasi->nama_skpd; ?></option>
                                 <?php } ?> 
                                 </select> 
+                                <input name="kode_lokasilama" placeholder="Nama " class="form-control" type="hidden" value="<?php echo $data->kode_lokasi; ?>">   
 
                                 <?php echo form_error('kode_lokasi'); ?>                                
                             </div>

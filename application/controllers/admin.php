@@ -130,12 +130,14 @@ class Admin extends CI_Controller {
 	
 		if($this->form_validation->run() == TRUE)
 		{
+			$niplama = $this->input->post('niplama');
 			$nip = $this->input->post('nip', TRUE);
 			$nama = $this->input->post('nama', TRUE);
 			$tipeuser = $this->input->post('tipe_user', TRUE);
 			$kodelokasi = $this->input->post('kode_lokasi', TRUE);
+			$kodelokasilama = $this->input->post('kode_lokasilama', TRUE);
 
-			$this->am->update_user($nip,$nama,$tipeuser,$kodelokasi);
+			$this->am->update_user($niplama,$nip,$nama,$tipeuser,$kodelokasi,$kodelokasilama);
 
 			$this->session->set_flashdata('succses','Data yang anda Update berhasil.');
 			redirect('admin/ks_bpkad');

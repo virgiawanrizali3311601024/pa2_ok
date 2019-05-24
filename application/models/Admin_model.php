@@ -54,17 +54,17 @@ class Admin_model extends CI_Model {
 		return $this->db->insert('user', $data);
 	}
 
-	function update_user($nip,$nama,$tipeuser,$kodelokasi)
+	function update_user($niplama,$nip,$nama,$tipeuser,$kodelokasi,$kodelokasilama)
 	{
-		$all=$this->get_nip_user($nip,$kodelokasi)->row_array();
+		//$all=$this->db->get_where('user', ['nip' => $this->session->userdata('nip')])->row_array();
 		$data = array(
 			'nip'	=> $nip,
 			'nama'	=> $nama,
 			'tipe_user'	=>$tipeuser,
 			'kode_lokasi'	=>$kodelokasi
 		);
-		$this->db->where('nip', $all['nip']);
-		$this->db->where('kode_lokasi', $all['kode_lokasi']);
+		$this->db->where('nip', $niplama);
+		$this->db->where('kode_lokasi', $kodelokasilama);
 		return $this->db->update('user',$data);
 	}
 
