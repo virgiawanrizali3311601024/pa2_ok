@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login V3</title>
+	<title>BPKAD KOTA BATAM | PEMBUKUAN ASET </title>
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="<?php echo base_url()?>assets/login/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -34,20 +34,20 @@
 			<div class="wrap-login100">
 				<?php echo form_open('login/proseslogin'); ?>
 					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
+						 <img src="assets/login/images/666.png">
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
+						BPKAD Kota Batam | Pembukuan Aset
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter Nip">
-						<input class="input100" type="text" name="nip" placeholder="Nip">
+						<input class="input100" type="text" name="nip" placeholder="NIP">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="password" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Kata Sandi">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					<?php if(isset($pesan))
@@ -56,21 +56,16 @@
 					<div class="contact100-form-checkbox">
 						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 						<label class="label-checkbox100" for="ckb1">
-							Remember me
+							Selalu ingat akun
 						</label>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<button type="submit" class="login100-form-btn">
-							Login
+							Masuk
 						</button>
 					</div>
 
-					<div class="text-center p-t-90">
-						<a class="txt1" href="<?php echo base_url()?>assets/login/#">
-							Forgot Password?
-						</a>
-					</div>
 				<?php echo form_close(); ?>
 			</div>
 		</div>
