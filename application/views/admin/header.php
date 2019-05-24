@@ -9,69 +9,57 @@
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/select2/dist/css/select2.min.css">
-    <!-- 
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/sweetalert/sweetalert.css">
-    -->
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/sweetalert/sweetalert.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/skins/_all-skins.min.css">
-  <!--
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/morris.js/morris.css">
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/jvectormap/jquery-jvectormap.css">
-  -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables/css/dataTables.bootstrap.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- 
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  
+
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load.   
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/morris.js/morris.css">
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/jvectormap/jquery-jvectormap.css">    
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">    
   -->
 
   
-  <style type="text/css">
-      form {
-      display: grid;
-      grid-template-columns: 275px 1fr;
-      }
-  </style>
+  
 
   <!-- jQuery 3 -->
   <script src="<?php echo base_url()?>assets/bower_components/jquery/dist/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
-  <script src="<?php echo base_url()?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>  
+  <script src="<?php echo base_url()?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
   <!-- Bootstrap 3.3.7 -->
   <script src="<?php echo base_url()?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/select2/dist/js/select2.full.min.js"></script>
-  <!--
   <script src="<?php echo base_url()?>assets/sweetalert/sweetalert.min.js"></script>
-  <script src="<?php echo base_url()?>assets/bower_components/morris.js/morris.min.js"></script>
-  <script src="<?php echo base_url()?>assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="<?php echo base_url()?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-  -->
   <script src="<?php echo base_url()?>assets/bower_components/raphael/raphael.min.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/moment/min/moment.min.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-  <!-- Bootstrap WYSIHTML5 -->
-  <script src="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/fastclick/lib/fastclick.js"></script>
-  <!-- AdminLTE App -->
   <script src="<?php echo base_url()?>assets/dist/js/adminlte.min.js"></script>
-  <!-- 
-  <script src="<?php echo base_url()?>assets/dist/js/pages/dashboard.js"></script>
-  -->
-  <!-- AdminLTE for demo purposes -->
   <script src="<?php echo base_url()?>assets/dist/js/demo.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/datatables/js/jquery.dataTables.min.js"></script>
-  <script src="<?php echo base_url()?>assets/bower_components/datatables/js/dataTables.bootstrap.js"></script>
-
-  <script>
-    $.widget.bridge('uibutton', $.ui.button);
-  </script>
+  <script src="<?php echo base_url()?>assets/bower_components/datatables/js/dataTables.bootstrap.js"></script> 
+  
+  <!--  
+  <script src="<?php echo base_url()?>assets/bower_components/morris.js/morris.min.js"></script>
+  <script src="<?php echo base_url()?>assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="<?php echo base_url()?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+  <script src="<?php echo base_url()?>assets/dist/js/pages/dashboard.js"></script>
+  -->
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
