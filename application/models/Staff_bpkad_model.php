@@ -949,7 +949,8 @@ class Staff_bpkad_model extends CI_Model {
 			'asal_usul' => $asalusul,
 			'harga' => $harga,
 			'kondisi' => $kondisi,
-			'keterangan' => $keterangan
+			'keterangan' => $keterangan,
+			'nip'		=> $this->session->userdata('nip')
 
 		);
 		$this->db->where('id_aset', $idaset);
@@ -982,7 +983,8 @@ class Staff_bpkad_model extends CI_Model {
 			'harga' => $harga,
 			'kondisi' => $kondisi,
 			'keterangan' => $keterangan,
-			'qrcode' => $image_name
+			'qrcode' => $image_name,
+			'nip'		=> $this->session->userdata('nip')
 
 		);
 		$this->db->where('id_aset', $idaset);
@@ -1011,7 +1013,8 @@ class Staff_bpkad_model extends CI_Model {
 			'asal_usul' => $asalusul,
 			
 			'harga' => $harga,
-			'keterangan' => $keterangan
+			'keterangan' => $keterangan,
+			'nip'		=> $this->session->userdata('nip')
 
 		);
 		$this->db->where('id_aset', $idaset);
@@ -1040,7 +1043,8 @@ class Staff_bpkad_model extends CI_Model {
 			
 			'harga' => $harga,
 			'kondisi' => $kondisi,
-			'keterangan' => $keterangan
+			'keterangan' => $keterangan,
+			'nip'		=> $this->session->userdata('nip')
 
 		);
 		$this->db->where('id_aset', $idaset);
@@ -1063,8 +1067,8 @@ class Staff_bpkad_model extends CI_Model {
 			
 			'harga' => $harga,
 			'kondisi' => $kondisi,
-			'keterangan' => $keterangan
-
+			'keterangan' => $keterangan,
+			'nip'		=> $this->session->userdata('nip')
 		);
 		$this->db->where('id_aset', $idaset);
 		return $this->db->update('kib_e', $data);
@@ -1090,7 +1094,8 @@ class Staff_bpkad_model extends CI_Model {
 			'asal_usul_pembiayaan' => $asalusulpembiayaan,
 			
 			'status_tanah' => $statustanah,
-			'keterangan' => $keterangan
+			'keterangan' => $keterangan,
+			'nip'		=> $this->session->userdata('nip')
 
 		);
 		$this->db->where('id_aset', $idaset);
