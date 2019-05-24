@@ -558,8 +558,8 @@ class Staff_bpkad_model extends CI_Model {
     { 	
 	    $this->db->from('kib_b');
 	    $this->db->where('id_aset',$idaset); 
-	    return $this->db->get();
-		return $data ->result_array();
+	    return $data = $this->db->get();
+		return $data->result_array();
     }
 
 
@@ -1221,7 +1221,7 @@ class Staff_bpkad_model extends CI_Model {
 		return $query->result();
 	}
 
-	function download_kibf()
+	function download_kibf($kodelokasi)
 	{
 		if($kodelokasi)
 		{
