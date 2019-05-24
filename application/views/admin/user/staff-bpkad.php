@@ -40,7 +40,7 @@
                   <tr>
                       <td>
                       <a class="btn btn-sm btn-primary" href="<?php echo base_url().'admin/edit_user/'.$data->nip.'/'.$data->kode_lokasi;?>" title="Edit" ><i class="glyphicon glyphicon-list"></i> Edit</a>
-                      <a class="btn btn-sm btn-danger" href="<?php echo base_url().'admin/hapus_user/'.$data->nip.'/'.$data->kode_lokasi;?>" title="Delete" ><i class="glyphicon glyphicon-list"></i> Delete</a>
+                      <a onclick="return confirm('Apakah Anad Yakin Ingin Menghapus User ini ?');" class="btn btn-sm btn-danger" href="<?php echo base_url().'admin/hapus_user/'.$data->nip.'/'.$data->kode_lokasi;?>" title="Delete" ><i class="glyphicon glyphicon-list"></i> Delete</a>
                       </td>
                       <td><?php echo $data->nip ?></td>
                       <td><?php echo $data->nama ?></td>
@@ -62,6 +62,10 @@
   <!-- /.content-wrapper -->
 
 <script type="text/javascript">
+
+window.setTimeout(function() {
+     $(".alert-succses").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
 
 $(document).ready(function() {
     $('#table-data').DataTable( {
