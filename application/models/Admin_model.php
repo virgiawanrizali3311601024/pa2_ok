@@ -54,4 +54,50 @@ class Admin_model extends CI_Model {
 		return $this->db->insert('user', $data);
 	}
 
+	function update_user($nip,$nama,$tipeuser,$kodelokasi)
+	{
+		$all=$this->get_nip_user($nip,$kodelokasi)->row_array();
+		$data = array(
+			'nip'	=> $nip,
+			'nama'	=> $nama,
+			'tipe_user'	=>$tipeuser,
+			'kode_lokasi'	=>$kodelokasi
+		);
+		$this->db->where('nip', $all['nip']);
+		$this->db->where('kode_lokasi', $all['kode_lokasi']);
+		return $this->db->update('user',$data);
+	}
+
+	function delete_user($nip,$kodelokasi)
+	{
+		$this->db->where('nip', $nip);
+		$this->db->where('kode_lokasi', $kodelokasi);
+		$this->db->delete('user');
+	}
+
+	function get_nip_user($nip,$kodelokasi)
+	{
+		$this->db->from('user');
+		$this->db->where('nip', $nip);
+		$this->db->where('kode_lokasi', $kodelokasi);
+		$query = $this->db->get();
+		return $query;
+	}
+
+	function get_list_all()
+	{
+		$this->db->from('user');
+		$query = $this->db->group_by('tipe_user');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_list_kodelokasi()
+	{
+		$this->db->from('skpd');
+		$this->db->order_by('nama_skpd', 'asc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 }

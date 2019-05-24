@@ -2,6 +2,11 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+        <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-success">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
       <h1>
        Kelola User
         <small>Ketua & Staff BPKAD</small>
@@ -34,8 +39,8 @@
                 <?php foreach ($user as $data): ?>
                   <tr>
                       <td>
-                      <a class="btn btn-sm btn-primary" href="<?php echo base_url().'admin/edit_user/'.$data->nip;?>" title="Edit" ><i class="glyphicon glyphicon-list"></i> Edit</a>
-                      <a class="btn btn-sm btn-danger" href="<?php echo base_url().'admin/hapus_user/'.$data->nip;?>" title="Delete" ><i class="glyphicon glyphicon-list"></i> Delete</a>
+                      <a class="btn btn-sm btn-primary" href="<?php echo base_url().'admin/edit_user/'.$data->nip.'/'.$data->kode_lokasi;?>" title="Edit" ><i class="glyphicon glyphicon-list"></i> Edit</a>
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url().'admin/hapus_user/'.$data->nip.'/'.$data->kode_lokasi;?>" title="Delete" ><i class="glyphicon glyphicon-list"></i> Delete</a>
                       </td>
                       <td><?php echo $data->nip ?></td>
                       <td><?php echo $data->nama ?></td>

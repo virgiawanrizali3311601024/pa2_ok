@@ -109,5 +109,47 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/v_gantipassword');
 		$this->load->view('admin/footer');
 	}
+
+	function hapus_user()
+	{
+		$nip = $this->uri->segment(3);
+		$kodelokasi = $this->uri->segment(4);
+		$this->am->delete_user($nip,$kodelokasi);
+
+		$this->session->set_flashdata('succses','Data berhasil dihapus.');
+		redirect('admin/ks_bpkad');
+		
+	}
+
+	function edit_user()
+	{
+		$this->form_validation->set_rules('nip', 'Nip', 'trim|required|max_length[15]');
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+		$this->form_validation->set_rules('tipe_user', 'Hak Akses', 'trim|required');
+		$this->form_validation->set_rules('kode_lokasi', 'Kode Lokasi', 'trim|required');
+	
+		if($this->form_validation->run() == TRUE)
+		{
+			$nip = $this->input->post('nip', TRUE);
+			$nama = $this->input->post('nama', TRUE);
+			$tipeuser = $this->input->post('tipe_user', TRUE);
+			$kodelokasi = $this->input->post('kode_lokasi', TRUE);
+
+			$this->am->update_user($nip,$nama,$tipeuser,$kodelokasi);
+
+			$this->session->set_flashdata('succses','Data yang anda Update berhasil.');
+			redirect('admin/ks_bpkad');
+		}	
+
+		$nip=$this->uri->segment(3);	
+		$kodelokasi=$this->uri->segment(4);		
+		$data['output']=$this->am->get_nip_user($nip, $kodelokasi);
+		$data['akses']=$this->am->get_list_all();
+		$data['kodelokasi']=$this->am->get_list_kodelokasi();
+
+		$this->load->view('admin/header');
+		$this->load->view('admin/user/vedit-user', $data);
+		$this->load->view('admin/footer');
+	}
 }
 ?>
