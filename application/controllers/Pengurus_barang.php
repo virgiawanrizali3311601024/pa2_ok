@@ -499,7 +499,6 @@ class Pengurus_barang extends CI_Controller {
 			$jumlah 	         = $this->input->post("jumlah");
 			$foto_fisik 		 = $this->input->post("foto_fisik");
 			$kontrak 		     = $this->input->post("kontrak");
-			$random 		     = $this->input->post("random");
 			$kode_lokasi 		 = $this->input->post("kode_lokasi");
 			$status 		     = $this->input->post("status");
 			
@@ -1057,7 +1056,7 @@ class Pengurus_barang extends CI_Controller {
 	{
 			$idaset=$this->uri->segment(3);			
 			$data['output']=$this->pb->get_id_kibb($idaset);
-			$data['aset']=$this->pb->get_list_asetb();
+			$data['aset']=$this->pb->get_list_p_asetb();
 			//echo json_encode($data->row());
 
 			$this->load->view('pengurus_barang/header');
@@ -1071,7 +1070,7 @@ class Pengurus_barang extends CI_Controller {
 	{
 			$idaset=$this->uri->segment(3);			
 			$data['output']=$this->pb->get_id_kibc($idaset);
-			$data['aset']=$this->pb->get_list_asetc();
+			$data['aset']=$this->pb->get_list_p_asetc();
 			//echo json_encode($data->row());
 
 			$this->load->view('pengurus_barang/header');
@@ -1196,9 +1195,21 @@ class Pengurus_barang extends CI_Controller {
 
 			$image_name=$idaset.'.png'; //buat name dari qr code sesuai dengan nim
 
-			$params['data'] = ("		  Nama Aset: ".$namaaset."
-			Kode Aset: ".$kodeaset."
-			Register: ".$register); //data yang akan di jadikan QR CODE
+			$params['data'] = ("		    Nama Aset: ".$namaaset."
+				Kode Aset: ".$kodeaset."
+				Register: ".$register."
+				Merk: ".$merk."
+				Ukuran: ".$ukuran."
+				Bahan: ".$bahan."
+				Tahun: ".$tahun."
+				Pabrik: ".$pabrik."
+				No. Rangka: ".$rangka."
+				No. Mesin: ".$mesin."
+				No. Polisi: ".$polisi."
+				Bpkb: ".$bpkb."
+				Asal Usul: ".$asalusul."
+				Harga: ".$harga."
+				Kode Lokasi: ".$kodelokasi); //data yang akan di jadikan QR CODE
 			//$params['data'] = $nim; 
 			$params['level'] = 'H'; //H=High
 			$params['size'] = 10;

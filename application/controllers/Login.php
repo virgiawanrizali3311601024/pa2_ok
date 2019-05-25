@@ -43,13 +43,14 @@ class Login extends CI_Controller {
     }else{
       $data['pesan']="Nip atau Password tidak sesuai.";
       $this->load->view('form_login',$data);
+      redirect('http://localhost/pa2_ok/');
     }
   }//end function proseslogin
 
   function logout(){
 
     $this->session->sess_destroy();
-    redirect('login/index');
+    redirect('http://localhost/pa2_ok/');
   }
 
 }//end controller
