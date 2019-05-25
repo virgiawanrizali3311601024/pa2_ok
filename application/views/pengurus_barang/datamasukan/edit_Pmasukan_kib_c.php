@@ -3,26 +3,22 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4"><h4><b>Edit Data Pembukuan KIB C</b></h4>
-          </div>
-        </div>
-      </div>
-    </section>
-
+      <h1>
+       Edit Data Masukan KIB C
+        <small>Gedung dan Bangunan</small>
+      </h1>
+    </section>  
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
-              <div class="col-md-11">
-                <h3 class="box-title">Responsive Hover Table</h3>
+              <div class="col-md-11">   
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
-                        <a class="btn btn-default" href="<?php echo base_url().'pengurus_barang/Pmasukan_kibc'?>"><i class="fa fa-arrow-left"> </i> Back</a>
+                        <a class="btn btn-default" href="<?php echo base_url().'pengurus_barang/Pmasukan_kiba'?>"><i class="fa fa-arrow-left"> </i> Kembali</a>
                     </span>
               </div>
             </div>
@@ -51,7 +47,7 @@
                             </div>
                             <div class="col-xs-3">
                                 <label>Register</label>
-                                <input name="register" value="<?php echo $data->register; ?>" placeholder="Register" class="form-control" type="text">
+                                <input name="register" value="<?php echo $data->register; ?>" placeholder="Register" class="form-control" type="number">
                             </div>
                             <div class="col-xs-3">
                                 <label>Kondisi</label>
@@ -73,7 +69,7 @@
                             </div>
                             <div class="col-xs-3">
                                 <label>Tahun Pengadaan</label>
-                                <input name="tahun_pengadaan" value="<?php echo $data->tahun_pengadaan; ?>" placeholder="Tahun Pengadaan" class="form-control" type="text">
+                                <input name="tahun_pengadaan" value="<?php echo $data->tahun_pengadaan; ?>" placeholder="Tahun Pengadaan" class="form-control" type="number">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -109,7 +105,7 @@
                             </div>
                             <div class="col-xs-3">
                                 <label>Harga</label>
-                                <input name="harga" value="<?php echo $data->harga; ?>" placeholder="Harga" class="form-control" type="text">
+                                <input name="harga" value="<?php echo $data->harga; ?>" placeholder="Harga" class="form-control" type="number">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -127,7 +123,7 @@
                         </div>
                     <?php endforeach; ?>
                     </div>
-                    <input type="submit" value="Update" class="btn btn-primary">
+                    <input type="submit" value="Simpan" class="btn btn-primary">
                 <?php echo form_close(); ?>
             </div>
             <!-- /.box-body -->
