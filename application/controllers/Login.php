@@ -29,13 +29,13 @@ class Login extends CI_Controller {
       $this->session->set_userdata('nama',$row->nama);
 
       if($this->session->userdata('tipe_user')=="ketua"){
-        redirect('Kabid/index');
+        redirect('Kabid/arsip_kibb');
       }elseif($this->session->userdata('tipe_user')=="staff bpkad"){
-        redirect('Staff_bpkad/index');
+        redirect('Staff_bpkad/masukan_kibb');
       }elseif($this->session->userdata('tipe_user')=="pengurus barang"){
-        redirect('Pengurus_barang/index');
+        redirect('Pengurus_barang/Input_kibb');
       }elseif($this->session->userdata('tipe_user')=="admin"){
-        redirect('admin/index');
+        redirect('admin/ks_bpkad');
       }else{
         $data['pesan']="Anda Bukan Pengguna Aplikasi Pembukuan, Silahkan Hubungi Staff BPKAD.";
         $this->load->view('form_login',$data);

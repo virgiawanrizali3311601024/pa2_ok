@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Staff Bpkad | Dashboard</title>
+  <title>BPKAD | Kabid</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
  <!-- Bootstrap 3.3.7 -->
  <link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap/css/bootstrap.min.css">
@@ -64,25 +64,23 @@
 <div class="wrapper">
 
   <header class="main-header">
-    <!-- Logo -->
-    <a href="<?php echo base_url().'kabid/index'?>" class="logo">
+     <!-- Logo -->
+    <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>PK</span>
+      <span class="logo-mini" style="font-size:11px;"><b>BPKAD</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Aplikasi</b> Pembukuan</span>
+      <span class="logo-lg"><b>BPKAD</b> | Pembukuan</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      <a href="<?php echo base_url()?>assets/#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+      
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="<?php echo base_url()?>assets/#" class="dropdown-toggle" data-toggle="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">   </span>
             </a>
@@ -90,14 +88,18 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <p>
+                  <p><?php echo $this->session->userdata('nama');?></p>
+                  <p><?php echo $this->session->userdata('tipe_user');?></p>
+                </p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?php echo base_url()?>kabid/gantipassword" class="btn btn-default btn-flat"><i class="fa fa-cogs"></i> Password</a>
+                  <a href="<?php echo base_url()?>pengurus_barang/gantipassword" class="btn btn-default btn-flat"><i class="fa fa-cogs"></i> Kata Sandi</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
+                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Keluar</a>
                 </div>
               </li>
             </ul>
@@ -123,23 +125,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Masukan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> KIB A</a></li>
-            <li><a href="<?php echo base_url().'kabid/masukan_kibb'?>"><i class="fa fa-circle-o"></i> KIB B</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> KIB C</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> KIB D</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> KIB E</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> KIB F</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
+          <a>
             <i class="fa fa-folder"></i> <span>Arsip</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -154,6 +140,8 @@
             <li><a href="<?php echo base_url().'kabid/arsip_kibf'?>"><i class="fa fa-circle-o"></i> KIB F</a></li>
           </ul>
         </li>
+        </li>
+        <li><a href="<?php echo base_url().'staff_bpkad/scan'?>"><i class="fa fa-qrcode"></i>Pemindai KodeQR</a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

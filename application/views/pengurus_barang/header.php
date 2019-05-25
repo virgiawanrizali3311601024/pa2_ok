@@ -41,12 +41,11 @@
 .file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
 .file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}</style>
 
-
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>BPKAD | Pengurus Barang</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/select2/dist/css/select2.min.css">
@@ -57,26 +56,18 @@
   <link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/skins/_all-skins.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables/css/dataTables.bootstrap.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  
-
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load.   
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/morris.js/morris.css">
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/jvectormap/jquery-jvectormap.css">    
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">    
-  -->
-
-  
-  
 
   <!-- jQuery 3 -->
   <script src="<?php echo base_url()?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+
   <!-- jQuery UI 1.11.4 -->
   <script src="<?php echo base_url()?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
+
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
     $.widget.bridge('uibutton', $.ui.button);
   </script>
+
   <!-- Bootstrap 3.3.7 -->
   <script src="<?php echo base_url()?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url()?>assets/bower_components/select2/dist/js/select2.full.min.js"></script>
@@ -108,7 +99,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="<?php echo base_url().'pengurus_barang/index'?>" class="logo">
+    <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini" style="font-size:11px;"><b>BPKAD</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -117,15 +108,13 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      <a href="<?php echo base_url()?>assets/#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+      
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="<?php echo base_url()?>assets/#" class="dropdown-toggle" data-toggle="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">   </span>
             </a>
@@ -133,19 +122,18 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
                 <p>
-                   
-                  <small>Kode Lokasi :    </small>
+                  <p><?php echo $this->session->userdata('nama');?></p>
+                  <p><?php echo $this->session->userdata('tipe_user');?></p>
                 </p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?php echo base_url()?>pengurus_barang/gantipassword" class="btn btn-default btn-flat"><i class="fa fa-cogs"></i> Password</a>
+                  <a href="<?php echo base_url()?>pengurus_barang/gantipassword" class="btn btn-default btn-flat"><i class="fa fa-cogs"></i> Kata Sandi</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
+                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Keluar</a>
                 </div>
               </li>
             </ul>
@@ -166,14 +154,14 @@
         </div>
         <div class="pull-left info">
           <p><?php echo $this->session->userdata('nama');?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> <?php echo $this->session->userdata('tipe_user');?></a>
+          <a><i class="fa fa-circle text-success"></i> <?php echo $this->session->userdata('tipe_user');?></a>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVIGASI</li>
         <li class="treeview">
-          <a href="#">
+          <a>
             <i class="fa fa-edit"></i> <span>Pembukuan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -189,7 +177,7 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a>
             <i class="fa fa-hashtag"></i> <span>Data Masukan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -205,7 +193,7 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a>
             <i class="fa fa-folder"></i> <span>Arsip</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
