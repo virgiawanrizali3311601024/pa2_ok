@@ -3,24 +3,17 @@
   <div class="content-wrapper">
    <section class="content-header">
       <h1>
-       Data Pembukuan KIB A
+       Data Masukan KIB A
         <small>Tanah</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Forms</a></li>
-        <li class="active">General Elements</li>
-      </ol>
     </section>
       <!-- Main content -->
       
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title"></h3>
-              
+            <div class="box-header">                  
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -36,15 +29,8 @@
                       <th>Tahun Pengadaan</th>
                       <th>Alamat</th>
                       <th>Status Tanah</th>
-                      <th>Tanggal Sertifkat</th>
-                      <th>Nomor Sertifikat</th>
                       <th>Asal  Usul Perolehan</th>
                       <th>Harga</th>
-                   <!--    <th>Kondisi</th>
-                      <th>Keterangan</th>
-                      <th>Foto Fisik</th>
-                      <th>Kontrak</th>
-                      <th>Kondisi Lokasi</th> -->
                       <th style="width:125px;">Action</th>             
                   </tr>
                 </thead>
@@ -63,15 +49,8 @@
                         <td><?php echo $hasil->tahun_pengadaan ?></td>
                         <td><?php echo $hasil->alamat ?></td>
                         <td><?php echo $hasil->status_tanah ?></td>
-                        <td><?php echo $hasil->tanggal_sertifikat ?></td>
-                        <td><?php echo $hasil->nomor_sertifikat ?></td>
                         <td><?php echo $hasil->asal_usul ?></td>
-                        <td><?php echo $hasil->harga ?></td>
-                        <!-- <td><?php echo $hasil->kondisi ?></td>
-                        <td><?php echo $hasil->keterangan ?></td>
-                        <td><?php echo $hasil->foto_fisik ?></td>
-                        <td><?php echo $hasil->kontrak ?></td>
-                        <td><?php echo $hasil->kode_lokasi ?></td>   -->    
+                        <td><?php echo $hasil->harga ?></td>   
                         <td>
                             <a href="<?php echo base_url() ?>Pengurus_barang/detail_kiba/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Detail</a>
                             <!-- <a onclick="detail_kiba_masukan(<?php //echo $hasil->id_aset ?>)" class="btn btn-sm btn-success">Detail</a> -->

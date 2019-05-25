@@ -4,23 +4,16 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Data Pembukuan KIB C
-        <small>Bangunan dan Jalan</small>
+       Data Masukan KIB C
+        <small>Gedung dan Bangunan</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Forms</a></li>
-        <li class="active">General Elements</li>
-      </ol>
     </section>
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"></h3>
-              
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -33,21 +26,12 @@
                       <th>Kode Aset</th>
                       <th>Register</th>
                       <th>Kondisi</th>
-                      <th>Beringkat/Tidak</th>
-                      <th>Beton/Tidak</th>
                       <th>Luas Lantai</th>
                       <th>Tahun Pengadaan</th>
                       <th>Alamat</th>
-                      <th>Nomor Dokumen Gedung</th>
-                      <th>Tanggal Dokumen</th>
                       <th>Status Tanah</th>
-                      <th>Nomor Kode Tanah</th>
-                      <th>Harga</th>  
-                    
-                                            
+                      <th>Harga</th>       
                       <th style="width:125px;">Action</th>
-                      
-                      
                   </tr>
                 </thead>
                 <tbody>
@@ -62,17 +46,11 @@
                         <td><?php echo $hasil->kode_aset ?></td>
                         <td><?php echo $hasil->register ?></td>
                         <td><?php echo $hasil->kondisi?></td>
-                        <td><?php echo $hasil->bertingkat ?></td>
-                        <td><?php echo $hasil->beton_tidak ?></td>
                         <td><?php echo $hasil->luas_lantai ?></td>
                         <td><?php echo $hasil->tahun_pengadaan ?></td>
                         <td><?php echo $hasil->alamat ?></td>
-                        <td><?php echo $hasil->nomor_dokumen_gedung ?></td>
-                        <td><?php echo $hasil->tanggal_dokumen ?></td>
                         <td><?php echo $hasil->status_tanah ?></td>
-                        <td><?php echo $hasil->nomor_kode_tanah ?></td>
-                        <td><?php echo $hasil->harga ?></td>    
-                        
+                        <td><?php echo $hasil->harga ?></td>
                         <td>
                             <a href="<?php echo base_url() ?>Pengurus_barang/detail_kibc/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Detail</a>
                             <!-- <a onclick="detail_kib_masukan(<?php echo $hasil->id_aset ?>)" class="btn btn-sm btn-success">Detail</a> -->
