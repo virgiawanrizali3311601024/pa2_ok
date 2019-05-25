@@ -153,5 +153,88 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/user/vedit-user', $data);
 		$this->load->view('admin/footer');
 	}
+	
+	function ss_kel(){
+		include APPPATH.'third_party/PHPExcel/PHPExcel.php';
+		if ($this->input->post('importfile')) {
+            $path = ROOT_UPLOAD_IMPORT_PATH;
+ 
+            $config['upload_path'] = $path;
+            $config['allowed_types'] = 'xlsx|xls|jpg|png';
+            $config['remove_spaces'] = TRUE;
+            $this->upload->initialize($config);
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('userfile')) {
+                $error = array('error' => $this->upload->display_errors());
+            } else {
+                $data = array('upload_data' => $this->upload->data());
+            }
+            
+            if (!empty($data['upload_data']['file_name'])) {
+                $import_xls_file = $data['upload_data']['file_name'];
+            } else {
+                $import_xls_file = 0;
+            }
+            $inputFileName = $path . $import_xls_file;
+            try {
+                $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+                $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+                $objPHPExcel = $objReader->load($inputFileName);
+            } catch (Exception $e) {
+                die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+                        . '": ' . $e->getMessage());
+            }
+            $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+            
+            $arrayCount = count($allDataInSheet);
+            $flag = 0;
+            $createArray = array('gol','bid','kel','s_kel','ss_kel','kd_aset','nm_aset');
+            $makeArray = array('gol' => 'gol', 'bid' => 'bid', 'kel' => 'kel', 's_kel' => 's_kel', 'ss_kel' => 'ss_kel', 'kd_aset' => 'kd_aset', 'nm_aset' => 'nm_aset');
+            $SheetDataKey = array();
+            foreach ($allDataInSheet as $dataInSheet) {
+                foreach ($dataInSheet as $key => $value) {
+                    if (in_array(trim($value), $createArray)) {
+                        $value = preg_replace('/\s+/', '', $value);
+                        $SheetDataKey[trim($value)] = $key;
+                    } else {
+                        
+                    }
+                }
+            }
+            $data = array_diff_key($makeArray, $SheetDataKey);
+           
+            if (empty($data)) {
+                $flag = 1;
+            }
+            if ($flag == 1) {
+                for ($i = 2; $i <= $arrayCount; $i++) {
+                    $addresses = array();
+                    $gol = $SheetDataKey['gol'];
+                    $bid = $SheetDataKey['bid'];
+                    $kel = $SheetDataKey['kel'];
+                    $s_kel = $SheetDataKey['s_kel'];
+					$ss_kel = $SheetDataKey['ss_kel'];
+					$kd_aset = $SheetDataKey['kd_aset'];
+					$nm_aset = $SheetDataKey['nm_aset'];
+                    $gol = filter_var(trim($allDataInSheet[$i][$gol]), FILTER_SANITIZE_STRING);
+                    $bid = filter_var(trim($allDataInSheet[$i][$bid]), FILTER_SANITIZE_STRING);
+                    $kel = filter_var(trim($allDataInSheet[$i][$kel]), FILTER_SANITIZE_STRING);
+                    $s_kel = filter_var(trim($allDataInSheet[$i][$s_kel]), FILTER_SANITIZE_STRING);
+					$ss_kel = filter_var(trim($allDataInSheet[$i][$ss_kel]), FILTER_SANITIZE_STRING);
+					$kd_aset = filter_var(trim($allDataInSheet[$i][$kd_aset]), FILTER_SANITIZE_STRING);
+					$nm_aset = filter_var(trim($allDataInSheet[$i][$nm_aset]), FILTER_SANITIZE_STRING);
+                    $fetchData[] = array('gol' => $gol, 'bid' => $bid, 'kel' => $kel, 's_kel' => $s_kel, 'ss_kel' => $ss_kel, 'kd_set' => $kd_set, 'nm_aset' => $nm_aset);
+                }              
+                $data['data_aset'] = $fetchData;
+                $this->import->setBatchImport($fetchData);
+                $this->import->importData();
+            } else {
+                echo "Please import correct file";
+            }
+        }
+        $this->load->view('import/display', $data);
+        
+    }
+	}
 }
 ?>
