@@ -57,7 +57,7 @@
                         <td><?php echo $hasil->harga ?></td>
                         <td><?php echo $hasil->keterangan ?></td>
                         <td>
-                            <a href="<?php echo base_url() ?>staff_bpkad/status_masukan_kibb/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-danger">Setujui Aset</a>
+                            <a href="<?php echo base_url() ?>staff_bpkad/status_masukan_kibb/<?php echo $hasil->id_aset?>" class="btn btn-sm btn-danger">Setujui Aset</a>
                             <a href="<?php echo base_url() ?>staff_bpkad/detail_s_kibb/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Detail</a>
                             <a href="<?php echo base_url() ?>staff_bpkad/view_edit_masukan_kibb/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Edit</a>
                             <a onclick="delete_kibb(<?php echo $hasil->id_aset ?>)" class="btn btn-sm btn-danger">Hapus</a>

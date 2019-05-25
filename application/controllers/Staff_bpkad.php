@@ -349,15 +349,20 @@ class Staff_bpkad extends CI_Controller {
 			//redirect
 			redirect('Staff_bpkad/arsip_kiba');
 		}
+
+
+
 	function status_masukan_kibb()
 		{
-
 			$id_aset = $this->uri->segment(3);
+			$data=$this->sb->get_id_detail_o_kibb($id_aset);
+			foreach ($data as $dataaset) {
+				
+					
+			 $this->load->library('ciqrcode'); //pemanggilan library QR CODE
 
-				$this->load->library('ciqrcode'); //pemanggilan library QR CODE
 
-
-				$config['cacheable']	= true; //boolean, the default is true
+				$conffig['cacheable']	= true; //boolean, the default is true
 				$config['cachedir']		= './assets/'; //string, the default is application/cache/
 				$config['errorlog']		= './assets/'; //string, the default is application/logs/
 				$config['imagedir']		= './assets/berkas/qrcode/'; //direktori penyimpanan qr code
@@ -368,18 +373,32 @@ class Staff_bpkad extends CI_Controller {
 				$this->ciqrcode->initialize($config);
 
 				$image_name=$id_aset.'.png'; //buat name dari qr code sesuai dengan nim
-
-				$params['data'] = ("		  Id Aset: ".$id_aset); //data yang akan di jadikan QR CODE
+				
+				$params['data'] = ("     Nama Aset: ".$dataaset['nama_aset']."
+					Kode Aset: ".$dataaset['kode_aset']."
+					Register: ".$dataaset['register']."
+					Merk: ".$dataaset['merk']."
+					Ukuran: ".$dataaset['ukuran']."
+					Bahan: ".$dataaset['bahan']."
+					Tahun Pengadaan: ".$dataaset['tahun_pengadaan']."
+					Pabrik: ".$dataaset['pabrik']."
+					No. Rangka: ".$dataaset['no_rangka']."
+					No. Mesin: ".$dataaset['no_mesin']."
+					No. Polisi: ".$dataaset['no_polisi']."
+					Bpkb: ".$dataaset['bpkb']."
+					Asal Usul: ".$dataaset['asal_usul']."
+					Harga: ".$dataaset['harga']."
+					kode_lokasi: ".$dataaset['kode_lokasi']
+					); //data yang akan di jadikan QR CODE
 				//$params['data'] = $nim; 
 				$params['level'] = 'H'; //H=High
 				$params['size'] = 10;
 				$params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
-				$this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
-
+				$this->ciqrcode->generate($params); // fungsi untuk generate QR CODE}
 
 			$this->sb->updatestatus_b($id_aset,$image_name);
 
-
+		}
 			$this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.
 				                                    </div>');
 
@@ -435,7 +454,7 @@ class Staff_bpkad extends CI_Controller {
 					//redirect
 			redirect('Staff_bpkad/arsip_kibf');
 		}
-//////////// delete
+//////////// delete 
    function hapus_masukan_kiba($id_aset)
 		{
 			$this->sb->delete_masukan_kiba($id_aset);
@@ -509,6 +528,8 @@ class Staff_bpkad extends CI_Controller {
 		}
 
 /////////////////////////////// edit fung
+
+
     function view_edit_masukan_kiba($idaset)
 		{
 			$idaset=$this->uri->segment(3);			
@@ -809,6 +830,7 @@ class Staff_bpkad extends CI_Controller {
 			$this->sb->update_masukan_kiba($idaset,$namaaset,$kodeaset,$register,$luas,$tahunpengadaan,$alamat,$statustanah,$tanggalsertifikat,$nomorsertifikat,$asalusul,$harga,$kondisi,$keterangan,$fotofisik,$kontrak,$kodelokasi);
 			redirect('Staff_bpkad/masukan_kiba');
 		}
+
 
 	
 	

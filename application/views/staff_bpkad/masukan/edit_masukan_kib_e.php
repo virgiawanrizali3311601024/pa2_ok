@@ -125,7 +125,7 @@ $('.select2').select2()
 $("#kodeaset").select2({
 	placeholder:"Nama Aset / Kode Aset",
 	ajax:{
-		url:"<?php echo site_url('staff_bpkad/list_s_asete')?>",
+		url:"<?php echo site_url('staff_bpkad/list_asete')?>",
 		dataType: 'json',
 		data: function (params) {
 
@@ -150,7 +150,7 @@ function format(x)
 function get_data(kata)
 {
 	$.ajax({
-	url:"<?php echo site_url('staff_bpkad/get_info_s_asete')?>",
+	url:"<?php echo site_url('staff_bpkad/get_info_asete')?>",
 		data:{kata : kata},
 		success: function(data)
 		{
