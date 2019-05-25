@@ -717,7 +717,7 @@ class Staff_bpkad_model extends CI_Model {
 		$this->db->select('user.kode_lokasi, kib_a.*');
 		$this->db->from('user');
 		$this->db->join('kib_a', 'user.kode_lokasi = kib_a.kode_lokasi ');
-		//$this->db->where('kib_a.nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('kib_a.status', 'disetujui');
 		$this->db->order_by('tahun_pengadaan', 'asc');
 		$query = $this->db->group_by('kib_a.tahun_pengadaan');
