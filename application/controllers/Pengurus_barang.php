@@ -1671,15 +1671,12 @@ function arsip_kiba()
 			
 			$row[] = $kiba->alamat;
 			$row[] = $kiba->status_tanah;
-			$row[] = $kiba->nomor_sertifikat;
 			$row[] = $kiba->asal_usul;
 
 			$row[] = $kiba->harga;
 			$row[] = $kiba->kondisi;
 			$row[] = $kiba->keterangan;
-			//$row[] = '<a class="btn btn-sm btn-primary" href="get_imagea/'.$kiba->id_aset.'" title="Download"><i class="glyphicon glyphicon-download-alt"></i> Download</a>';
-			//$row[] = '<a class="btn btn-sm btn-primary" href="get_kontraka/'.$kiba->id_aset.'" title="Download"><i class="glyphicon glyphicon-download-alt"></i> Download</a>';
-			
+						
 			$row[] = $kiba->kode_lokasi;
 
 						
@@ -1851,8 +1848,7 @@ function arsip_kibb()
 			$row[] = $kibb->bahan;
 			$row[] = $kibb->tahun_pengadaan;
 			$row[] = $kibb->harga;		
-			$row[] = $kibb->keterangan;
-			$row[] = $kibb->kode_lokasi;				
+			$row[] = $kibb->keterangan;				
 		
 			$data[] = $row;
 		}
@@ -2258,7 +2254,7 @@ function arsip_kibd()
 			//$row[] = $kibd->keterangan;
 			//$row[] = $kibd->foto_fisik;
 			//$row[] = $kibd->kontrak;
-			$row[] = $kibd->kode_lokasi;
+			//$row[] = $kibd->kode_lokasi;
 
 			
 			$data[] = $row;
@@ -2442,7 +2438,7 @@ function arsip_kibe()
 			$row[] = $kibe->kode_aset;
 			//$row[] = $kibe->register;
 			$row[] = $kibe->judul_buku;
-			$row[] = $kibe->spesifikasi_buku;
+			//$row[] = $kibe->spesifikasi_buku;
 			
 			$row[] = $kibe->tahun_pengadaan;
 			//$row[] = $kibe->nomor_dokumen;
@@ -2454,7 +2450,7 @@ function arsip_kibe()
 			//$row[] = $kibe->keterangan;
 			//$row[] = $kibe->foto_fisik;
 			//$row[] = $kibe->kontrak;
-			$row[] = $kibe->kode_lokasi;
+			//$row[] = $kibe->kode_lokasi;
 
 			
 			$data[] = $row;
@@ -2621,7 +2617,7 @@ function arsip_kibf()
 			//$row[] = $kibf->beton_tidak;
 			
 			$row[] = $kibf->luas;
-			$row[] = $kibf->alamat;
+			//$row[] = $kibf->alamat;
 			//$row[] = $kibf->tanggal_dokumen;
 			//$row[] = $kibf->nomor_dokumen;
 			$row[] = $kibf->tahun_bulan_mulai;
@@ -2634,7 +2630,7 @@ function arsip_kibf()
 
 			//$row[] = $kibf->foto_fisik;
 			//$row[] = $kibf->kontrak;
-			$row[] = $kibf->kode_lokasi;
+			//$row[] = $kibf->kode_lokasi;
 
 			
 			$data[] = $row;

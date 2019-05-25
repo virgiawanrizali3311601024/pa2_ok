@@ -2,11 +2,10 @@
 <html>
 <head>
   
-  <!-- currency -->
-  <!-- TF JS-->
+ <!-- TF JS-->
 <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tablefilter/2.5.0/tablefilter.js">
   var tf = setFilterGrid("table1"); 
-</script> 
+</script>
 
 <!-- CSS INPUT FILE -->
 <style type="text/css">
