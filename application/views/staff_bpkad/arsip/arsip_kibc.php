@@ -51,7 +51,6 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <button class="btn btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Muat Ulang</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
