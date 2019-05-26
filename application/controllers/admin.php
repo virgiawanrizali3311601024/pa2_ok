@@ -155,21 +155,14 @@ class Admin extends CI_Controller {
 	}
 	
 	function ss_kel(){
-		include APPPATH.'third_party/PHPExcel/PHPExcel.php';
 		if ($this->input->post('importfile')) {
-            $path = ROOT_UPLOAD_IMPORT_PATH;
- 
+            $path = 'assets/berkas';
+			require_once APPPATH . 'third_party/PHPExcel/PHPExcel.php';
             $config['upload_path'] = $path;
-            $config['allowed_types'] = 'xlsx|xls|jpg|png';
+            $config['allowed_types'] = 'xlsx|xls|csv';
             $config['remove_spaces'] = TRUE;
             $this->upload->initialize($config);
             $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('userfile')) {
-                $error = array('error' => $this->upload->display_errors());
-            } else {
-                $data = array('upload_data' => $this->upload->data());
-            }
-            
             if (!empty($data['upload_data']['file_name'])) {
                 $import_xls_file = $data['upload_data']['file_name'];
             } else {
@@ -232,9 +225,13 @@ class Admin extends CI_Controller {
                 echo "Please import correct file";
             }
         }
-        $this->load->view('import/display', $data);
+        #$this->load->view('import/display', $data);
         
     }
-	
+	function vimport_aset(){
+		$this->load->view('admin/header');
+		$this->load->view('admin/import_kd_aset');
+		$this->load->view('admin/footer');
+	}
 }
 ?>

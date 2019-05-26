@@ -121,7 +121,7 @@
 <!-- INPUT FILE -->
 <div class="file-upload">
   <div class="file-select">
-    <div class="file-select-button" id="foto_fisik">Foto Tanah</div>
+    <div class="file-select-button" id="foto_fisik">Foto Barang</div>
     <div class="file-select-name" id="noFile">Format File *.png*.jpg*.jpeg</div> 
     <input type="file" name="foto_fisik" id="chooseFile" required="" accept=".jpg, .jpeg, .png">
   </div>

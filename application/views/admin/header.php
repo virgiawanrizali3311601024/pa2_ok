@@ -157,7 +157,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url().'admin/ks_bpkad'?>"><i class="fa fa-circle-o"></i> Ketua & Staff BPKAD</a></li>
             <li><a href="<?php echo base_url().'admin/pengurus_barang'?>"><i class="fa fa-circle-o"></i> Pengurus Barang</a></li>
-            <li><a href="<?php echo base_url().'admin/import_kd_aset'?>"><i class="fa fa-circle-o"></i>Kode barang</a></li>
+            <li><a href="<?php echo base_url().'admin/vimport_aset'?>"><i class="fa fa-circle-o"></i>Kode barang</a></li>
           </ul>
         </li>
       </ul>

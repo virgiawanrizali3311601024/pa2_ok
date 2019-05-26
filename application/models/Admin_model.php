@@ -99,10 +99,15 @@ class Admin_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
-	function importData() {
+	public function setBatchImport($batchImport) {
+        $this->_batchImport = $batchImport;
+    }
+ 
+    // save data
+    public function importData() {
         $data = $this->_batchImport;
-        $this->db->insert_batch('import', $data);
-	}
+        $this->db->insert_batch('sub_sub_kelompok', $data);
+    }
 	function kd_aset_list() {
 		$this->db->from('sub_sub_kelompok');
 		$query = $this->db->get();
