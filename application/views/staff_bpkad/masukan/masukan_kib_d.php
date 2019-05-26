@@ -3,6 +3,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+          <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-info">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
+    
       <h1>
        Data Masukan KIB D
         <small>Jalan, Irigasi, dan Jaringan</small>
@@ -56,7 +62,7 @@
                         <td><?php echo $hasil->tahun_pengadaan ?></td>
                         <td><?php echo $hasil->status_tanah ?></td>
                         <td><?php echo $hasil->asal_usul ?></td>
-                        <td><?php echo $hasil->harga ?></td>   
+                        <td><?php echo number_format($hasil->harga,2,",",".");  ?></td>   
                         <td><?php echo $hasil->keterangan ?></td>
                         <td>
                             <a href="<?php echo base_url() ?>staff_bpkad/status_masukan_kibd/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-danger">Setujui Aset</a>
@@ -253,6 +259,9 @@ function delete_kibd(id_aset)
 
     }
 }
+  window.setTimeout(function() {
+     $(".alert-info").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
 
 </script>
 

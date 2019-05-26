@@ -2,6 +2,12 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <section class="content-header">
+          <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-info">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
+    
       <h1>
        Data Masukan KIB A
         <small>Tanah</small>
@@ -51,7 +57,7 @@
                         <td><?php echo $hasil->alamat ?></td>
                         <td><?php echo $hasil->status_tanah ?></td>
                         <td><?php echo $hasil->asal_usul ?></td>
-                        <td><?php echo $hasil->harga ?></td>
+                        <td><?php echo number_format($hasil->harga,2,",","."); ?></td>
                         <td><?php echo $hasil->kondisi ?></td>
                         <td><?php echo $hasil->keterangan ?></td>    
                         <td>
@@ -136,6 +142,10 @@ function delete_kiba_masukan(id_aset)
 
     }
 }
+
+  window.setTimeout(function() {
+     $(".alert-info").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
 
 </script>
 

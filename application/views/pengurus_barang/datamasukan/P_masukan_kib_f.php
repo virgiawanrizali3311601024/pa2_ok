@@ -3,6 +3,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
   <section class="content-header">
+      <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-info">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
+    
       <h1>
        Data Pembukuan KIB F
         <small>Konstruksi Dalam Pengerjaan</small>
@@ -64,7 +70,7 @@
                         <td><?php echo $hasil->nomor_dokumen?></td>
                         <td><?php echo $hasil->tahun_bulan_mulai ?></td>
                         <td><?php echo $hasil->nomor_kode_tanah ?></td>
-                        <td><?php echo $hasil->nilai_kontrak ?></td>
+                        <td><?php echo number_format($hasil->nilai_kontrak,2,",",".");  ?></td>
                         <td><?php echo $hasil->asal_usul_pembiayaan ?></td>
               
                         <td>
@@ -164,6 +170,10 @@ function detail_kib_masukan(id_aset)
         }
     });
 }
+
+  window.setTimeout(function() {
+     $(".alert-info").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
 
 
 </script>

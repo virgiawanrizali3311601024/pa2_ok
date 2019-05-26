@@ -1,6 +1,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+       <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-info">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
+    
       <h1>
        Form Pembukuan KIB B
         <small>Peralatan dan Mesin</small>
@@ -134,7 +140,7 @@
     <input type="file" name="kontrak" id="chooseFile" required="" accept=".pdf">
   </div>
 </div>
-<input type="hidden" name="random" value="<?php echo rand(100,1000000);?>" />
+
 <h1></h1>
 <button class="btn btn-primary" type="submit">Submit</button>
 <h1><small><small>*Kondisi = B:Baik, RR:Rusak Ringan, RB:Rusak Berat</small></small><br>
@@ -205,6 +211,10 @@
   </div>
 
 <script type="text/javascript">
+
+  window.setTimeout(function() {
+     $(".alert-info").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
 
 $('.select2').select2()
 

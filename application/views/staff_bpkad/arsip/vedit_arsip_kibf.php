@@ -107,7 +107,7 @@
                             </div>
                             <div class="col-xs-3">
                                 <label>Nilai Kontrak</label>
-                                <input name="nilai_kontrak" value="<?php echo number_format($data->nilai_kontrak,2,",",".") ?>" placeholder="Nilai Kontrak" class="form-control" type="text">
+                                <input name="nilai_kontrak" value="<?php echo $data->nilai_kontrak; ?>" placeholder="Nilai Kontrak" class="form-control" type="text">
                                 <?php echo form_error('nilai_kontrak'); ?>
                             </div>
                         </div>

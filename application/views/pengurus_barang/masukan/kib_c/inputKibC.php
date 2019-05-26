@@ -3,6 +3,12 @@
 
     <!-- Content Header (Page header) -->
     <section class="content-header">
+       <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-info">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
+    
       <h1>
        Form Pembukuan KIB C
         <small>Gedung dan Bangunan</small>
@@ -213,6 +219,11 @@
 
 
  <script type="text/javascript">
+
+
+    window.setTimeout(function() {
+     $(".alert-info").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
 
 $('.select2').select2()
 

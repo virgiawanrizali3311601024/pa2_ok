@@ -122,6 +122,11 @@ foreach ($data->result() as $row):
 							<td align="left"><?php echo $row->tahun_pengadaan  ?>  </td>
 						</tr>
 						<tr valign="top">
+							<th>Harga</th>	
+							<th width="2%">:</th>
+							<td align="left"><?php echo number_format($row->harga,2,",","."); ?>  </td>
+						</tr>
+						<tr valign="top">
 							<th>Kode Lokasi</th>	
 							<th width="2%">:</th>
 							<td align="left"><?php echo $row->kode_lokasi  ?>  </td>

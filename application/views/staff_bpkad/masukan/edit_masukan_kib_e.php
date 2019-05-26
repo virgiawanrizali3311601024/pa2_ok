@@ -3,26 +3,22 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4"><h4><b>Edit Data Pembukuan KIB E</b></h4>
-          </div>
-        </div>
-      </div>
+      <h1>
+       Edit Data Masukan KIB E
+        <small>Aset Tetap Lainnya</small>
+      </h1>
     </section>
-
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
               <div class="col-md-11">
-                <h3 class="box-title">Responsive Hover Table</h3>
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
-                        <a class="btn btn-default" href="<?php echo base_url().'staff_bpkad/masukan_kibe'?>"><i class="fa fa-arrow-left"> </i> Back</a>
+                        <a class="btn btn-default" href="<?php echo base_url().'staff_bpkad/masukan_kibe'?>"><i class="fa fa-arrow-left"> </i> Kembali</a>
                     </span>
               </div>
             </div>
@@ -105,7 +101,7 @@
                         </div>
                     <?php endforeach; ?>
                     </div>
-                    <input type="submit" value="Update" class="btn btn-primary">
+                    <input type="submit" value="Simpan" class="btn btn-primary">
                 <?php echo form_close(); ?>
             </div>
             <!-- /.box-body -->

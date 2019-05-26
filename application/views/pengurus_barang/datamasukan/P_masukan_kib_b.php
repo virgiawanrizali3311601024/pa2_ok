@@ -2,6 +2,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
      <section class="content-header">
+          <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-info">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
+    
       <h1>
        Data Masukan KIB B
         <small>Peralatan dan Mesin</small>
@@ -56,7 +62,7 @@
                         <td><?php echo $hasil->no_polisi ?></td>
                         <td><?php echo $hasil->bpkb ?></td>
                         <td><?php echo $hasil->asal_usul ?></td>
-                        <td><?php echo $hasil->harga ?></td>
+                        <td><?php echo number_format($hasil->harga,2,",",".");  ?></td>
                         <td>  
                         <a href="<?php echo base_url() ?>Pengurus_barang/detail_kibb/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Detail</a>
                         <!-- <a onclick="detail_kibb_masukan(<?php echo $hasil->id_aset ?>)" class="btn btn-sm btn-success">Detail</a> -->
@@ -202,6 +208,10 @@ function get_data(kata)
     }
   });
 }
+
+  window.setTimeout(function() {
+     $(".alert-info").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
 
 </script>
 

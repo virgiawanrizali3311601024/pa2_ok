@@ -3,6 +3,12 @@
 
     <!-- Content Header (Page header) -->
     <section class="content-header">
+       <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-info">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
+    
       <h1>
        Form Pembukuan KIB D
         <small>Jalan, Irigasi Dan Jaringan</small>
@@ -21,10 +27,6 @@
               <div class="box-body">
                 <div class="form-group">
 <!-- form -->
-<div>
-  <button id="predik" data-toggle="tooltip" title="Memprediksi data sesuai dengan masukan Merk, Ukuran, Bahan, Dan Harga">Prediksi</button>
-  <input type="text" id="prediksi"></input>
-</div>
 
 <form action="<?=base_url('Pengurus_barang/simpan_kib_d') ?>" method="post" enctype="multipart/form-data">
     <div class="table-responsive">
@@ -230,6 +232,10 @@ if(!empty($this->session->flashdata('error'))) { ?>
   </div>
 
 <script type="text/javascript">
+
+    window.setTimeout(function() {
+     $(".alert-info").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
 
 $('.select2').select2()
 

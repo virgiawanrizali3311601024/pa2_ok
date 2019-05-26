@@ -3,10 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <?php if ($this->session->flashdata('succses')) : ?>
-            <div class="alert alert-success">
+            <div class="alert alert-info">
                 <?php echo $this->session->flashdata('succses'); ?>
             </div>
         <?php endif; ?>
+    
       <h1>
        Arsip KIB A
         <small>Tanah</small>
@@ -52,7 +53,6 @@
         <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
-              <button class="btn btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Muat Ulang</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body ">
