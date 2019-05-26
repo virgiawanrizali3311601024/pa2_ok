@@ -19,7 +19,7 @@ class Staff_bpkad extends CI_Controller {
 		$data_nama['nip'] = $this->session->userdata('nip');
 		$data_nama['kodelokasi'] = $this->session->userdata('kode_lokasi');
 		$this->load->view('Staff_bpkad/header',$data_nama);
-		$this->load->view('Staff_bpkad/dashboard');
+		$this->load->view('Staff_bpkad/masukan_kibb');
 		$this->load->view('Staff_bpkad/footer');
 	}
 

@@ -19,7 +19,7 @@ class Pengurus_barang extends CI_Controller {
 			$data_nama['nip'] = $this->session->userdata('nip');
 			$data_nama['kodelokasi'] = $this->session->userdata('kode_lokasi');
 			$this->load->view('pengurus_barang/header',$data_nama);
-			$this->load->view('pengurus_barang/dashboard');
+			$this->load->view('pengurus_barang/Input_kibb');
 			$this->load->view('pengurus_barang/footer');
 		}
 
