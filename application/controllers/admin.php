@@ -57,7 +57,7 @@ class Admin extends CI_Controller {
 					$this->am->add_user($nip,$hakakses,$password,$nama,$kodelokasi);
 				}
 				$this->session->set_flashdata('succses','Data berhasil ditambahkan.');
-				redirect('admin/index');
+				redirect('admin/ks_bpkad');
 			}
 
 			

@@ -132,7 +132,7 @@ class Kabid extends CI_Controller {
 				
 				$row[] = $kiba->alamat;
 				$row[] = $kiba->status_tanah;
-				$row[] = $kiba->nomor_sertifikat;
+				//$row[] = $kiba->nomor_sertifikat;
 				$row[] = $kiba->asal_usul;
 
 				$row[] = $kiba->harga;
@@ -313,7 +313,7 @@ class Kabid extends CI_Controller {
 				$row[] = $kibb->tahun_pengadaan;
 				$row[] = $kibb->harga;		
 				$row[] = $kibb->keterangan;
-				$row[] = $kibb->kode_lokasi;				
+				//$row[] = $kibb->kode_lokasi;				
 			
 				$data[] = $row;
 			}
@@ -903,7 +903,7 @@ class Kabid extends CI_Controller {
 				$row[] = $kibe->kode_aset;
 				//$row[] = $kibe->register;
 				$row[] = $kibe->judul_buku;
-				$row[] = $kibe->spesifikasi_buku;
+				//$row[] = $kibe->spesifikasi_buku;
 				
 				$row[] = $kibe->tahun_pengadaan;
 				//$row[] = $kibe->nomor_dokumen;
@@ -915,7 +915,7 @@ class Kabid extends CI_Controller {
 				//$row[] = $kibe->keterangan;
 				//$row[] = $kibe->foto_fisik;
 				//$row[] = $kibe->kontrak;
-				$row[] = $kibe->kode_lokasi;
+				//$row[] = $kibe->kode_lokasi;
 
 				
 				$data[] = $row;
@@ -1082,7 +1082,7 @@ class Kabid extends CI_Controller {
 				//$row[] = $kibf->beton_tidak;
 				
 				$row[] = $kibf->luas;
-				$row[] = $kibf->alamat;
+				//$row[] = $kibf->alamat;
 				//$row[] = $kibf->tanggal_dokumen;
 				//$row[] = $kibf->nomor_dokumen;
 				$row[] = $kibf->tahun_bulan_mulai;
@@ -1095,7 +1095,7 @@ class Kabid extends CI_Controller {
 
 				//$row[] = $kibf->foto_fisik;
 				//$row[] = $kibf->kontrak;
-				$row[] = $kibf->kode_lokasi;
+				//$row[] = $kibf->kode_lokasi;
 
 				
 				$data[] = $row;
