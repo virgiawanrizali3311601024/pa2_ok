@@ -146,6 +146,10 @@
 <h1></h1>
 
 <script>
+  window.setTimeout(function() {
+     $(".alert-info").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
+  
 document.getElementById('form-kib').skpd.onchange = function() {
     var newaction = "<?php echo base_url() ?>petugas_inven/UploadKibB/"+this.value;
     document.getElementById('form-kib').action = newaction;

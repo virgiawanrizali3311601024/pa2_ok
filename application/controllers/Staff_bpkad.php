@@ -523,7 +523,7 @@ class Staff_bpkad extends CI_Controller {
 			$data['aset']=$this->sb->get_list_s_aseta();
 			
 
-			$this->load->view('Staff_bpkad/header-cadangan');
+			$this->load->view('Staff_bpkad/header');
 			$this->load->view('Staff_bpkad/masukan/edit_masukan_kib_a', $data);
 			$this->load->view('Staff_bpkad/footer');
 		}
@@ -534,7 +534,7 @@ class Staff_bpkad extends CI_Controller {
 			$data['aset']=$this->sb->get_list_s_asetb();
 			
 
-			$this->load->view('Staff_bpkad/header-cadangan');
+			$this->load->view('Staff_bpkad/header');
 			$this->load->view('Staff_bpkad/masukan/edit_masukan_kib_b', $data);
 			$this->load->view('Staff_bpkad/footer');
 		}

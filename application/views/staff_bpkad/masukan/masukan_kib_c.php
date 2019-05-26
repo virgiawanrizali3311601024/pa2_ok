@@ -273,6 +273,10 @@ function delete_kibc(id_aset)
     }
 }
 
+
+  window.setTimeout(function() {
+     $(".alert-info").fadeTo(500, 0).slideUp(500, function(){ $(this).remove(); }); 
+}, 5000)
 </script>
 
 <!-- Bootstrap modal detail -->

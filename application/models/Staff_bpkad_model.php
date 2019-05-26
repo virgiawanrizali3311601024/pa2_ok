@@ -1888,6 +1888,7 @@ class Staff_bpkad_model extends CI_Model {
 	function delete_masukan_kibd($id_aset)
 	{
 		$this->db->where('id_aset', $id_aset);
+		$this->db->delete('kib_d');
 
 	}
 
