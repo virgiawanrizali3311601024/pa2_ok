@@ -3,14 +3,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-2"><h4><b>Tambah User </b></h4>
-          </div>
-        </div>
-      </div>
+      <h1>
+       Tambah Akun Pengguna<br><small>Pengurus Barang, Staff BPKAD, Kabid Aset BPKAD</small>
+      </h1>
     </section>
-
     <!-- Main content -->
     <section class="content">
     <?php if (validation_errors()) : ?>
@@ -20,7 +16,7 @@
     <?php endif; ?>
 
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
               <div class="col-md-11">
@@ -28,7 +24,7 @@
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
-                        <a class="btn btn-default" href="<?php echo base_url().'admin/ks_bpkad'?>"><i class="fa fa-arrow-left"> </i> Back</a>
+                        <a class="btn btn-default" href="<?php echo base_url().'admin/ks_bpkad'?>"><i class="fa fa-arrow-left"> </i> Kembali</a>
                     </span>
               </div>
             </div>
@@ -60,14 +56,14 @@
                                 <?php echo form_error('tipe_user'); ?>                           
                             </div>
                             <div class="col-xs-2">
-                                <label>Password</label>
-                                <input name="password1"  placeholder="Password" class="form-control" type="password">
+                                <label>Kata Sandi</label>
+                                <input name="password1"  placeholder="Kata Sandi" class="form-control" type="password">
                                 <?php echo form_error('password1'); ?>
                                 
                             </div>
                             <div class="col-xs-2">
-                                <label>Confirm Password</label>
-                                <input name="password2"  placeholder="Konfirmasi Password" class="form-control" type="password">
+                                <label>Kofirmasi Kata Sandi</label>
+                                <input name="password2"  placeholder="Kofirmasi Kata Sandi" class="form-control" type="password">
                                 
                                 
                             </div>

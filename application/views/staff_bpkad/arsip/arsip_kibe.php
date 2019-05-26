@@ -36,7 +36,7 @@
                 </select>
             </div>
         </div>
-        
+        <br>
         <div class="form-group">
             <div>
                 <br>
@@ -48,11 +48,11 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"></h3>
-              <button class="btn btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Reload</button>
+            <div class="box-header">
+              <button class="btn btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Muat Ulang</button>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -63,25 +63,21 @@
                       <th>Nama Aset</th>
                       <th>Kode Aset</th>
                       <th>Judul Buku</th>
-                      <th>Spesifikasi Buku</th>
                       
                       <th>Tahun Pengadaan</th>
                       <th>Asal Usul</th>
 
-                      <th>Harga</th> 
-                      <th>Kode Lokasi</th>
+                      <th>Harga</th>
                   </tr>
                 </thead>
                 <tbody>
                 </tbody>
               </table>
+        <a href="<?php echo base_url().'staff_bpkad/view_download_kiba'?>" class="btn btn-primary">Konversi Ke Excel</a>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-        </div>
-        <div class="container">
-        <a href="<?php echo base_url().'staff_bpkad/view_download_kibe'?>" class="btn btn-primary">Konversi Ke Excel</a>
         </div>
       </div>
     </section>

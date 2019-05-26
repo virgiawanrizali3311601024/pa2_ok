@@ -55,10 +55,10 @@
                         <td><?php echo $hasil->kondisi ?></td>
                         <td><?php echo $hasil->keterangan ?></td>    
                         <td>
-                            <a href="<?php echo base_url() ?>staff_bpkad/status_masukan_kiba/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-danger">Setujui Aset</a>
-                            <a href="<?php echo base_url() ?>staff_bpkad/detail_s_kiba/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Detail</a>
+                            <a href="<?php echo base_url() ?>staff_bpkad/status_masukan_kiba/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Setujui Aset</a>
+                            <a href="<?php echo base_url() ?>staff_bpkad/detail_s_kiba/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-primary">Detail</a>
                             <!-- <a onclick="detail_kiba_masukan(<?php echo $hasil->id_aset ?>)" class="btn btn-sm btn-success">Detail</a> -->
-                            <a href="<?php echo base_url() ?>staff_bpkad/view_edit_masukan_kiba/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Edit</a>
+                            <a href="<?php echo base_url() ?>staff_bpkad/view_edit_masukan_kiba/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-primary">Edit</a>
                             <a onclick="delete_kiba_masukan(<?php echo $hasil->id_aset ?>)" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                       </tr>

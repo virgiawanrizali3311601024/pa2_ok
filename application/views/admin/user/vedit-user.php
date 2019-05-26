@@ -3,14 +3,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-1"><h4><b>Update User </b></h4>
-          </div>
-        </div>
-      </div>
+      <h1>
+       Edit Akun Pengguna<br><small>Pengurus Barang, Staff BPKAD, Kabid Aset BPKAD</small>
+      </h1>
     </section>
-
     <!-- Main content -->
     <section class="content">
     <?php if (validation_errors()) : ?>
@@ -20,7 +16,7 @@
     <?php endif; ?>
 
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
               <div class="col-md-11">
@@ -28,7 +24,7 @@
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
-                        <a class="btn btn-default" href="<?php echo base_url().'admin/ks_bpkad'?>"><i class="fa fa-arrow-left"> </i> Back</a>
+                        <a class="btn btn-default" href="<?php echo base_url().'admin/ks_bpkad'?>"><i class="fa fa-arrow-left"> </i> Kembali</a>
                     </span>
               </div>
             </div>
@@ -73,7 +69,7 @@
                         </div>
                     <?php endforeach; ?>
                     </div>
-                    <input type="submit" value="Update" class="btn btn-primary">
+                    <input type="submit" value="Simpan" class="btn btn-primary">
                 <?php echo form_close(); ?>
             </div>
             <!-- /.box-body -->

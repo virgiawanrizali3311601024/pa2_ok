@@ -1,64 +1,58 @@
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+ <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-1"><h4><b>Arsip </b></h4>
-          </div>
-          <div class="col-sm-2">
-          <form id="form-filter" class="form-horizontal">
-              <div class="form-group">
-                <select name="kode_lokasi" id="kode_lokasi" class="form-control">
-                  <option value="">Pilih SKPD</option>
+        <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-success">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
+      <h1>
+       Arsip KIB E
+        <small>Aset Tetap Lainnya</small>
+      </h1>
+    </section>
+    <br>
+    <form id="form-filter" class="box form-inline content-header">
+        <div class="form-group">
+            <label>Lokasi</label>
+             <div>
+                <select style="width: 255px" name="kode_lokasi" id="kode_lokasi" class="form-control">
+                    <option value="">Pilih SKPD</option>
                   <?php foreach ($skpd as $list): ?>
                     <option value="<?php echo $list->kode_lokasi; ?>"><?php echo $list->nama_skpd; ?> - <?php echo $list->kode_lokasi; ?></option>
                   <?php endforeach; ?>
                 </select>
-              </div>
-              <div class="form-group">
-                <select name="tahun_pengadaan" id="tahun_pengadaan" class="form-control">
-                  <option value="">Pilih Tahun</option>
-                  <?php foreach ($all_tahun as $baris): ?>
-                    <option value="<?php echo $baris->tahun_pengadaan; ?>"><?php echo $baris->tahun_pengadaan; ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-9 control-label">Harga Terendah</label>
-                <div class="col-sm-15">
-                    <input type="number" class="form-control" id="harga_rendah">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-9 control-label">Harga Tertinggi</label>
-                <div class="col-sm-15">
-                    <input type="number" class="form-control" id="harga_tinggi">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="LastName" class="col-sm-2 control-label"></label>
-                <div class="col-sm-4">
-                    <button type="button" id="btn-filter" class="btn btn-primary">Filter</button>
-                    <button type="button" id="btn-reset" class="btn btn-default">Reset</button>
-                </div>
-                </div>
-          </form>
-          </div>
+            </div>
         </div>
-      </div>
-    </section>
+        <div class="form-group">
+            <label>Tahun Pengadaan</label>
+             <div>
+                <select style="width: 255px" name="tahun_pengadaan" id="tahun_pengadaan" class="form-control">
+                    <option value=""></option>
+                    <?php foreach ($all_tahun as $baris): ?>
+                    <option value="<?php echo $baris->tahun_pengadaan; ?>"><?php echo $baris->tahun_pengadaan; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <div>
+                <br>
+                <button type="button" id="btn-filter" class="btn btn-primary">Filter</button>
+                <button type="button" id="btn-reset" class="btn btn-default">Reset</button>
 
+            </div>
+        </div>
+    </form>
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Responsive Hover Table</h3>
-              
-              </div>
+              <button class="btn btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Muat Ulang</button>
+            </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="table" class="table table-bordered table-striped">
@@ -69,25 +63,21 @@
                       <th>Kode Aset</th>
                       <th>Bangunan</th>
                       
-                      <th>Luas</th>    
-                      <th>Alamat</th>            
+                      <th>Luas</th>          
                       <th>Tahun Bulan Mulai</th>
 
                       <th>Nilai Kontrak</th>
                       <th>Asal Usul Pembiayaan</th>
-                      <th>Kode Lokasi</th> 
                   </tr>
                 </thead>
                 <tbody>
                 </tbody>
               </table>
+        <a href="<?php echo base_url().'kabid/view_download_kibe'?>" class="btn btn-primary">Konversi Ke Excel</a>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-        </div>
-        <div class="container">
-        <a href="<?php echo base_url().'kabid/view_download_kibf'?>" class="btn btn-primary">Konversi Ke Excel</a>
         </div>
       </div>
     </section>

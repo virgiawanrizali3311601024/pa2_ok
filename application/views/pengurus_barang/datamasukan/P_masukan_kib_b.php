@@ -3,22 +3,16 @@
     <!-- Content Header (Page header) -->
      <section class="content-header">
       <h1>
-       Data Pembukuan KIB B
+       Data Masukan KIB B
         <small>Peralatan dan Mesin</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li><a href="#">Forms</a></li>
-        <li class="active">General Elements</li>
       </ol>
     </section>
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"></h3>
-              
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -31,23 +25,13 @@
                       <th>Kode Aset</th>
                       <th>Register</th>
                       <th>Merek</th>
-                      <th>Ukuran</th>
-                      <th>Bahan</th>
                       <th>Tahun Pengadaan</th>
                       <th>Lokasi</th>
                       <th>Pabrik</th>
-                      <th>Nomor Rangka</th>
-                      <th>Nomor Mesin</th>
                       <th>Nomor Polisi</th>
                       <th>BPKB</th>
                       <th>Asal  Usul Perolehan</th>
-                      <th>Pengguaan</th>
                       <th>Harga</th>
-                     <!--  <th>Kondisi</th>
-                      <th>Keterangan</th>
-                      <th>Foto Fisik</th>
-                      <th>Kontrak</th>
-                      <th>Kondisi Lokasi</th> -->
                                             
                       <th style="width:125px;">Action</th>
                       
@@ -66,23 +50,13 @@
                         <td><?php echo $hasil->kode_aset ?></td>
                         <td><?php echo $hasil->register ?></td>
                         <td><?php echo $hasil->merk ?></td>
-                        <td><?php echo $hasil->ukuran ?></td>
-                        <td><?php echo $hasil->bahan ?></td>
                         <td><?php echo $hasil->tahun_pengadaan ?></td>
                         <td><?php echo $hasil->lokasi ?></td>
                         <td><?php echo $hasil->pabrik ?></td>
-                        <td><?php echo $hasil->no_rangka ?></td>
-                        <td><?php echo $hasil->no_mesin ?></td>
                         <td><?php echo $hasil->no_polisi ?></td>
                         <td><?php echo $hasil->bpkb ?></td>
                         <td><?php echo $hasil->asal_usul ?></td>
-                        <td><?php echo $hasil->penggunaan ?></td>
                         <td><?php echo $hasil->harga ?></td>
-                       <!--  <td><?php echo $hasil->kondisi ?></td>
-                        <td><?php echo $hasil->keterangan ?></td>
-                        <td><?php echo $hasil->foto_fisik ?></td>
-                        <td><?php echo $hasil->kontrak ?></td>
-                        <td><?php echo $hasil->kode_lokasi ?></td> -->
                         <td>  
                         <a href="<?php echo base_url() ?>Pengurus_barang/detail_kibb/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Detail</a>
                         <!-- <a onclick="detail_kibb_masukan(<?php echo $hasil->id_aset ?>)" class="btn btn-sm btn-success">Detail</a> -->

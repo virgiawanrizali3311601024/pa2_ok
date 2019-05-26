@@ -2,11 +2,10 @@
 <html>
 <head>
   
-  <!-- currency -->
-  <!-- TF JS-->
+ <!-- TF JS-->
 <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tablefilter/2.5.0/tablefilter.js">
   var tf = setFilterGrid("table1"); 
-</script> 
+</script>
 
 <!-- CSS INPUT FILE -->
 <style type="text/css">
@@ -114,7 +113,7 @@
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a class="dropdown-toggle" data-toggle="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">   </span>
             </a>
@@ -161,7 +160,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVIGASI</li>
         <li class="treeview">
-          <a>
+          <a href="">
             <i class="fa fa-edit"></i> <span>Pembukuan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -177,7 +176,7 @@
           </ul>
         </li>
         <li class="treeview">
-          <a>
+          <a href="">
             <i class="fa fa-hashtag"></i> <span>Data Masukan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -193,7 +192,7 @@
           </ul>
         </li>
         <li class="treeview">
-          <a>
+          <a href="">
             <i class="fa fa-folder"></i> <span>Arsip</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

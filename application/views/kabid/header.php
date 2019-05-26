@@ -80,7 +80,7 @@
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a class="dropdown-toggle" data-toggle="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">   </span>
             </a>
@@ -123,9 +123,9 @@
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header">NAVIGASI</li>
         <li class="treeview">
-          <a>
+          <a href="">
             <i class="fa fa-folder"></i> <span>Arsip</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

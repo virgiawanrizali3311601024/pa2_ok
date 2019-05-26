@@ -1156,14 +1156,14 @@ class Staff_bpkad extends CI_Controller {
 				
 				$row[] = $kiba->nama_aset;
 				$row[] = $kiba->kode_aset;
-				$row[] = $kiba->register;
+				//$row[] = $kiba->register;
 				$row[] = $kiba->luas;
 				$row[] = $kiba->tahun_pengadaan;
 				
 				$row[] = $kiba->alamat;
 				$row[] = $kiba->status_tanah;
-				$row[] = $kiba->tanggal_sertifikat;
-				$row[] = $kiba->nomor_sertifikat;
+				//$row[] = $kiba->tanggal_sertifikat;
+				//$row[] = $kiba->nomor_sertifikat;
 				$row[] = $kiba->asal_usul;
 
 				$row[] = number_format($kiba->harga,2,",",".");
@@ -2469,7 +2469,7 @@ class Staff_bpkad extends CI_Controller {
 				$row[] = $kibe->kode_aset;
 				//$row[] = $kibe->register;
 				$row[] = $kibe->judul_buku;
-				$row[] = $kibe->spesifikasi_buku;
+				//$row[] = $kibe->spesifikasi_buku;
 				
 				$row[] = $kibe->tahun_pengadaan;
 				//$row[] = $kibe->nomor_dokumen;

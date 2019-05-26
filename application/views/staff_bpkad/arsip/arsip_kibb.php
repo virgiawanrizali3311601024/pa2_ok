@@ -36,7 +36,7 @@
                 </select>
             </div>
         </div>
-        
+        <br>
         <div class="form-group">
             <div>
                 <br>
@@ -51,9 +51,8 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"></h3>
-              
-              </div>
+              <button class="btn btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Muat Ulang</button>
+            </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="table" class="table table-bordered table-striped">
@@ -70,19 +69,16 @@
                       <th>Tahun Pengadaan</th>                      
                       <th>Harga</th>
                       <th>Keterangan</th>
-                      <th>Kode Lokasi</th>
                   </tr>
                 </thead>
                 <tbody>
                 </tbody>
               </table>
+        <a href="<?php echo base_url().'staff_bpkad/view_download_kiba'?>" class="btn btn-primary">Konversi Ke Excel</a>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-        </div>
-        <div class="container">
-        <a href="<?php echo base_url().'staff_bpkad/view_download_kibb'?>" class="btn btn-primary">Konversi Ke Excel</a>
         </div>
       </div>
     </section>

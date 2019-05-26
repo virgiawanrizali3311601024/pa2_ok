@@ -1,15 +1,9 @@
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <?php if ($this->session->flashdata('succses')) : ?>
-            <div class="alert alert-success">
-                <?php echo $this->session->flashdata('succses'); ?>
-            </div>
-        <?php endif; ?>
+   <section class="content-header">
       <h1>
-       Kelola User
-        <small>Ketua & Staff BPKAD</small>
+       Kelola Akun Pengguna
       </h1>
     </section>
     <br>
