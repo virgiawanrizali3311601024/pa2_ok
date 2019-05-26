@@ -68,7 +68,7 @@ class Pengurus_barang_model extends CI_Model {
 
 		$this->db->from('kib_a');
 		$this->db->join('user', 'kib_a.kode_lokasi = user.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('status', 'disetujui');
 
 		$i = 0;
@@ -121,7 +121,7 @@ class Pengurus_barang_model extends CI_Model {
 
 		$this->db->from('kib_b');
 		$this->db->join('user', 'kib_b.kode_lokasi = user.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('status', 'disetujui');
 		$i = 0;
 	
@@ -174,7 +174,7 @@ class Pengurus_barang_model extends CI_Model {
 
 		$this->db->from('kib_c');
 		$this->db->join('user', 'kib_c.kode_lokasi = user.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('status', 'disetujui');
 		$i = 0;
 	
@@ -227,7 +227,7 @@ class Pengurus_barang_model extends CI_Model {
 
 		$this->db->from('kib_d');
 		$this->db->join('user', 'kib_d.kode_lokasi = user.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('status', 'disetujui');
 		$i = 0;
 	
@@ -280,7 +280,7 @@ class Pengurus_barang_model extends CI_Model {
 
 		$this->db->from('kib_e');
 		$this->db->join('user', 'kib_e.kode_lokasi = user.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('status', 'disetujui');
 		$i = 0;
 	
@@ -333,7 +333,7 @@ class Pengurus_barang_model extends CI_Model {
 
 		$this->db->from('kib_f');
 		$this->db->join('user', 'kib_f.kode_lokasi = user.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('status', 'disetujui');
 		$i = 0;
 	
@@ -522,7 +522,7 @@ class Pengurus_barang_model extends CI_Model {
 		$this->db->select('user.kode_lokasi, kib_a.*');
 		$this->db->from('user');
 		$this->db->join('kib_a', 'user.kode_lokasi = kib_a.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('kib_a.status', 'disetujui');
 		$this->db->order_by('tahun_pengadaan', 'asc');
 		$query = $this->db->group_by('kib_a.tahun_pengadaan');
@@ -535,7 +535,7 @@ class Pengurus_barang_model extends CI_Model {
 		$this->db->select('user.kode_lokasi, kib_b.*');
 		$this->db->from('user');
 		$this->db->join('kib_b', 'user.kode_lokasi = kib_b.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('kib_b.status', 'disetujui');
 		$this->db->order_by('tahun_pengadaan', 'asc');
 		$query = $this->db->group_by('kib_b.tahun_pengadaan');
@@ -548,7 +548,7 @@ class Pengurus_barang_model extends CI_Model {
 		$this->db->select('user.kode_lokasi, kib_c.*');
 		$this->db->from('user');
 		$this->db->join('kib_c', 'user.kode_lokasi = kib_c.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('kib_c.status', 'disetujui');
 		$this->db->order_by('tahun_pengadaan', 'asc');
 		$query = $this->db->group_by('kib_c.tahun_pengadaan');
@@ -561,7 +561,7 @@ class Pengurus_barang_model extends CI_Model {
 		$this->db->select('user.kode_lokasi, kib_d.*');
 		$this->db->from('user');
 		$this->db->join('kib_d', 'user.kode_lokasi = kib_d.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('kib_d.status', 'disetujui');
 		$this->db->order_by('tahun_pengadaan', 'asc');
 		$query = $this->db->group_by('kib_d.tahun_pengadaan');
@@ -574,7 +574,7 @@ class Pengurus_barang_model extends CI_Model {
 		$this->db->select('user.kode_lokasi, kib_e.*');
 		$this->db->from('user');
 		$this->db->join('kib_e', 'user.kode_lokasi = kib_e.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('kib_e.status', 'disetujui');
 		$this->db->order_by('tahun_pengadaan', 'asc');
 		$query = $this->db->group_by('kib_e.tahun_pengadaan');
@@ -587,7 +587,7 @@ class Pengurus_barang_model extends CI_Model {
 		$this->db->select('user.kode_lokasi, kib_f.*');
 		$this->db->from('user');
 		$this->db->join('kib_f', 'user.kode_lokasi = kib_f.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$this->db->where('kib_f.status', 'disetujui');
 		$this->db->order_by('tahun_bulan_mulai', 'asc');
 		$query = $this->db->group_by('kib_f.tahun_bulan_mulai');
@@ -1122,7 +1122,7 @@ function download_kontrak_p_kibf($id_aset)
 		$this->db->select('user.kode_lokasi, skpd.*');
 		$this->db->from('user');
 		$this->db->join('skpd', 'user.kode_lokasi = skpd.kode_lokasi ');
-		$this->db->where('nip', $this->session->userdata('nip'));
+		$this->db->where('user.nip', $this->session->userdata('nip'));
 		$query = $this->db->get();
 		return $query->result();
 	}
