@@ -343,11 +343,11 @@ class Staff_bpkad extends CI_Controller {
 
 			$this->sb->updatestatus_($id_aset);
 
-			$this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.
-				                                    </div>');
+			
 
 			//redirect
-			redirect('Staff_bpkad/arsip_kiba');
+			$this->session->set_flashdata('succses','Data berhasil disetujui.');
+			redirect('Staff_bpkad/masukan_kiba');
 		}
 
 
@@ -396,14 +396,12 @@ class Staff_bpkad extends CI_Controller {
 				$params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
 				$this->ciqrcode->generate($params); // fungsi untuk generate QR CODE}
 
+
 			$this->sb->updatestatus_b($id_aset,$image_name);
 
 		}
-			$this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.
-				                                    </div>');
-
-			//redirect
-			redirect('Staff_bpkad/arsip_kibb');
+			$this->session->set_flashdata('succses','Data berhasil disetujui.');
+			redirect('Staff_bpkad/masukan_kibb');
 
 		}
 	function status_masukan_kibc()
@@ -412,11 +410,8 @@ class Staff_bpkad extends CI_Controller {
 
 			$this->sb->updatestatus_c($id_aset);
 
-			$this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.
-				                                    </div>');
-
-			//redirect
-			redirect('Staff_bpkad/arsip_kibc');
+			$this->session->set_flashdata('succses','Data berhasil disetujui.');
+			redirect('Staff_bpkad/masukan_kibc');
 		}
 	function status_masukan_kibd()
 		{
@@ -424,11 +419,8 @@ class Staff_bpkad extends CI_Controller {
 
 			$this->sb->updatestatus_d($id_aset);
 
-			$this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.
-						                                    </div>');
-
-					//redirect
-			redirect('Staff_bpkad/arsip_kibd');
+			$this->session->set_flashdata('succses','Data berhasil disetujui.');
+			redirect('Staff_bpkad/masukan_kibd');
 		}
 	function status_masukan_kibe()
 		{
@@ -436,11 +428,8 @@ class Staff_bpkad extends CI_Controller {
 
 			$this->sb->updatestatus_e($id_aset);
 
-			$this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.
-						                                    </div>');
-
-			//redirect
-			redirect('Staff_bpkad/arsip_kibe');
+			$this->session->set_flashdata('succses','Data berhasil disetujui.');
+			redirect('Staff_bpkad/masukan_kibe');
 	   }
 	function status_masukan_kibf()
 		{
@@ -448,11 +437,8 @@ class Staff_bpkad extends CI_Controller {
 
 			$this->sb->updatestatus_f($id_aset);
 
-			$this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.
-						                                    </div>');
-
-					//redirect
-			redirect('Staff_bpkad/arsip_kibf');
+			$this->session->set_flashdata('succses','Data berhasil disetujui.');
+			redirect('Staff_bpkad/masukan_kibf');
 		}
 //////////// delete 
    function hapus_masukan_kiba($id_aset)
@@ -828,6 +814,7 @@ class Staff_bpkad extends CI_Controller {
 			$kodelokasi = $this->input->post('kode_lokasi', TRUE);
 
 			$this->sb->update_masukan_kiba($idaset,$namaaset,$kodeaset,$register,$luas,$tahunpengadaan,$alamat,$statustanah,$tanggalsertifikat,$nomorsertifikat,$asalusul,$harga,$kondisi,$keterangan,$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Staff_bpkad/masukan_kiba');
 		}
 
@@ -905,6 +892,7 @@ class Staff_bpkad extends CI_Controller {
 
 				
 			$this->sb->update_masukan_kibb($idaset,$kodeaset,$register,$namaaset,$merk ,$ukuran ,$bahan ,$tahun ,$lokasi ,$pabrik,$rangka ,$mesin ,$polisi, $bpkb,$asalusul ,$penggunaan ,$harga ,$kondisi ,$keterangan ,$kodelokasi ,$fotofisik ,$kontrak ,$image_name );
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Staff_bpkad/masukan_kibb');
 		}
 
@@ -936,6 +924,7 @@ class Staff_bpkad extends CI_Controller {
 			$kodelokasi = $this->input->post('kode_lokasi');
 
 			$this->sb->update_masukan_kibc($idaset,$namaaset,$kodeaset,$register,$kondisi,$bertingkat,$betontidak,$luaslantai,$tahunpengadaan,$alamat,$nomordokumengedung,$tanggaldokumen,$statustanah,$nomorkodetanah,$luastanah,$asalusul,$harga,$keterangan,$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Staff_bpkad/masukan_kibc');
 		}
 
@@ -969,6 +958,7 @@ class Staff_bpkad extends CI_Controller {
 			$this->sb->update_masukan_kibd($idaset,$namaaset,$kodeaset,$register,$konstruksi,$panjang,$lebar,$luas,
 										$alamat,$tahunpengadaan,$tanggaldokumen,$nomordokumen,$statustanah,$nomorkodetanah,
 										$asalusul,$harga,$kondisi,$keterangan,$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Staff_bpkad/masukan_kibd');
 			}
 
@@ -993,6 +983,7 @@ class Staff_bpkad extends CI_Controller {
 			$kodelokasi = $this->input->post('kode_lokasi');
 
 			$this->sb->update_masukan_kibe($idaset,$namaaset,$kodeaset,$register,$judulbuku,$spesifikasibuku,$tahunpengadaan,$nomordokumen,$tanggaldokumen,$asalusul,$harga,$kondisi,$keterangan,$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Staff_bpkad/masukan_kibe');
 		}
 
@@ -1022,10 +1013,11 @@ class Staff_bpkad extends CI_Controller {
 			$this->sb->update_masukan_kibf($idaset,$namaaset,$kodeaset,$bangunan,$bertingkattidak,$betontidak,$luas,$alamat,
 										$tanggaldokumen,$nomordokumen,$tahunbulanmulai,$nomorkodetanah,$nilaikontrak,$asalusulpembiayaan,
 										$statustanah,$keterangan,$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Staff_bpkad/masukan_kibf');
 		}
 
-		function scan()
+	function scan()
 	{
 		$this->load->view('Staff_bpkad/scan/index.html');
 	

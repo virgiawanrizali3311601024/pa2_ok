@@ -418,7 +418,9 @@ class Pengurus_barang extends CI_Controller {
 			$data_a['kontrak'] = $upload;
 		}
 		$this->pb->simpan_a($data_a);
+		$this->session->set_flashdata('succses','Data berhasil di Tambah.');
 		redirect('Pengurus_barang/Input_kiba');
+
 	
 		}
 	   private function _do_upload_kib_a(){
@@ -549,6 +551,7 @@ class Pengurus_barang extends CI_Controller {
 			$data_b['kontrak'] = $upload;
 		}
 		$this->pb->simpan_b($data_b);
+		$this->session->set_flashdata('succses','Data berhasil di Tambah.');
 		
 
 		}
@@ -626,6 +629,7 @@ class Pengurus_barang extends CI_Controller {
 			$data_c['kontrak'] = $upload;
 		}
 		$this->pb->simpan_c($data_c);
+		$this->session->set_flashdata('succses','Data berhasil di Tambah.');
 		redirect('Pengurus_barang/Input_kibc');
 
 	
@@ -715,6 +719,7 @@ class Pengurus_barang extends CI_Controller {
 			$data_d['kontrak'] = $upload;
 		}
 		$this->pb->simpan_d($data_d);
+		$this->session->set_flashdata('succses','Data berhasil di Tambah.');
 		redirect('Pengurus_barang/Input_kibd');
 
 	
@@ -827,6 +832,7 @@ class Pengurus_barang extends CI_Controller {
 			$data_e['kontrak'] = $upload;
 		}
 		$this->pb->simpan_e($data_e);
+		$this->session->set_flashdata('succses','Data berhasil di Tambah.');
 
 		}	
 		redirect('Pengurus_barang/Input_kibe');
@@ -915,6 +921,7 @@ class Pengurus_barang extends CI_Controller {
 			$data_f['kontrak'] = $upload;
 		}
 		$this->pb->simpan_f($data_f);
+		$this->session->set_flashdata('succses','Data berhasil di Tambah.');
 		redirect('Pengurus_barang/Input_kibf');
 
 	
@@ -1157,6 +1164,7 @@ class Pengurus_barang extends CI_Controller {
 			$this->pb->update_pmasukan_kiba($idaset,$namaaset,$kodeaset,$register,$luas,$tahunpengadaan,$alamat,$statustanah,
 										$tanggalsertifikat,$nomorsertifikat,$asalusul,$harga,$kondisi,$keterangan,
 										$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('pengurus_barang/pmasukan_kiba');
 		}
 
@@ -1195,6 +1203,7 @@ class Pengurus_barang extends CI_Controller {
 			$this->pb->update_pmasukan_kibb($idaset,$kodeaset,$register,$namaaset,$merk,$ukuran,$bahan,$tahun,$lokasi,
 										$pabrik,$rangka,$mesin,$polisi,$bpkb,$asalusul,$penggunaan,$harga,$kondisi,
 										$keterangan,$kodelokasi,$fotofisik,$kontrak);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Pengurus_barang/pmasukan_kibb');
 		}
 		function edit_Pmasukan_kibc()
@@ -1226,6 +1235,7 @@ class Pengurus_barang extends CI_Controller {
 			$this->pb->update_pmasukan_kibc($idaset,$namaaset,$kodeaset,$register,$kondisi,$bertingkat,$betontidak,$luaslantai,
 										$tahunpengadaan,$alamat,$nomordokumengedung,$tanggaldokumen,$statustanah,$nomorkodetanah,
 										$luastanah,$asalusul,$harga,$keterangan,$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Pengurus_barang/pmasukan_kibc');
 		}
 
@@ -1259,6 +1269,7 @@ class Pengurus_barang extends CI_Controller {
 			$this->pb->update_pmasukan_kibd($idaset,$namaaset,$kodeaset,$register,$konstruksi,$panjang,$lebar,$luas,
 										$alamat,$tahunpengadaan,$tanggaldokumen,$nomordokumen,$statustanah,$nomorkodetanah,
 										$asalusul,$harga,$kondisi,$keterangan,$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Pengurus_barang/pmasukan_kibd');
 			}
 
@@ -1283,6 +1294,7 @@ class Pengurus_barang extends CI_Controller {
 			$kodelokasi = $this->input->post('kode_lokasi');
 
 			$this->pb->update_pmasukan_kibe($idaset,$namaaset,$kodeaset,$register,$judulbuku,$spesifikasibuku,$tahunpengadaan,$nomordokumen,$tanggaldokumen,$asalusul,$harga,$kondisi,$keterangan,$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Pengurus_barang/pmasukan_kibe');
 		}
 
@@ -1312,6 +1324,7 @@ class Pengurus_barang extends CI_Controller {
 			$this->pb->update_pmasukan_kibf($idaset,$namaaset,$kodeaset,$bangunan,$bertingkattidak,$betontidak,$luas,$alamat,
 										$tanggaldokumen,$nomordokumen,$tahunbulanmulai,$nomorkodetanah,$nilaikontrak,$asalusulpembiayaan,
 										$statustanah,$keterangan,$fotofisik,$kontrak,$kodelokasi);
+			$this->session->set_flashdata('succses','Data berhasil di update.');
 			redirect('Pengurus_barang/pmasukan_kibf');
 		}
 

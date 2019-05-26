@@ -2,6 +2,12 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <section class="content-header">
+          <?php if ($this->session->flashdata('succses')) : ?>
+            <div class="alert alert-info">
+                <?php echo $this->session->flashdata('succses'); ?>
+            </div>
+        <?php endif; ?>
+    
       <h1>
        Data Masukan KIB A
         <small>Tanah</small>

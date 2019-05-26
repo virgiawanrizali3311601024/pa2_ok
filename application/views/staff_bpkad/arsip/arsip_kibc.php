@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <?php if ($this->session->flashdata('succses')) : ?>
-            <div class="alert alert-success">
+            <div class="alert alert-info">
                 <?php echo $this->session->flashdata('succses'); ?>
             </div>
         <?php endif; ?>
