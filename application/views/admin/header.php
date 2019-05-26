@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BPKAD | Staf Aset</title>
+  <title>BPKAD | Admin</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
   <!-- Bootstrap 3.3.7 -->
@@ -67,7 +67,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="<?php echo base_url().'pengurus_barang/index'?>" class="logo">
+    <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini" style="font-size:11px;"><b>BPKAD</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -76,10 +76,6 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      <a href="<?php echo base_url()?>assets/#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
@@ -92,7 +88,10 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="<?php echo base_url()?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
+                <p>
+                  <p><?php echo $this->session->userdata('nama');?></p>
+                  <p><?php echo $this->session->userdata('tipe_user');?></p>
+                </p>
                 <p>
                    
                   <small>Kode Lokasi :    </small>
@@ -129,35 +128,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-hashtag"></i> <span>Data Masukan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <!--
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/masukan_kiba'?>"><i class="fa fa-circle-o"></i> KIB A</a></li>
-            <li><a href="<?php echo base_url().'admin/masukan_kibb'?>"><i class="fa fa-circle-o"></i> KIB B</a></li>
-            <li><a href="<?php echo base_url().'admin/masukan_kibc'?>"><i class="fa fa-circle-o"></i> KIB C</a></li>
-            <li><a href="<?php echo base_url().'admin/masukan_kibd'?>"><i class="fa fa-circle-o"></i> KIB D</a></li>
-            <li><a href="<?php echo base_url().'admin/masukan_kibe'?>"><i class="fa fa-circle-o"></i> KIB E</a></li>
-            <li><a href="<?php echo base_url().'admin/masukan_kibf'?>"><i class="fa fa-circle-o"></i> KIB F</a></li>
-          </ul>
-          -->
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-folder"></i> <span>User</span>
-            <span class="pull-right-container"> 
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/ks_bpkad'?>"><i class="fa fa-circle-o"></i> Ketua & Staff BPKAD</a></li>
-            <li><a href="<?php echo base_url().'admin/pengurus_barang'?>"><i class="fa fa-circle-o"></i> Pengurus Barang</a></li>
-            <li><a href="<?php echo base_url().'admin/import_kd_aset'?>"><i class="fa fa-circle-o"></i>Kode barang</a></li>
+            <li><a href="<?php echo base_url().'admin/ks_bpkad'?>"><i class="fa fa-id-badge"></i> Kelola Akun Pengguna</a></li>
           </ul>
         </li>
       </ul>

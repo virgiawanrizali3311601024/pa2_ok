@@ -34,7 +34,7 @@
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
-                        <a class="btn btn-default" href="<?php echo base_url().'staff_bpkad/index'?>"><i class="fa fa-arrow-left"> </i> Back</a>
+                        <a class="btn btn-default" href="<?php echo base_url().'Pengurus_barang/Input_kibb'?>"><i class="fa fa-arrow-left"> </i> Kembali</a>
                     </span>
               </div>
             </div>
