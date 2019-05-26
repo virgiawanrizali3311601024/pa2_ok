@@ -404,6 +404,7 @@ class Pengurus_barang extends CI_Controller {
 			'kontrak' 		     => $this->input->post("kontrak"),
 			'kode_lokasi' 		 => $this->input->post("kode_lokasi"),
 			'status' 		     => $this->input->post("status"),
+			'nip'		         => $this->session->userdata('nip')
 		);
 
 	
@@ -501,7 +502,7 @@ class Pengurus_barang extends CI_Controller {
 			$kontrak 		     = $this->input->post("kontrak");
 			$kode_lokasi 		 = $this->input->post("kode_lokasi");
 			$status 		     = $this->input->post("status");
-			$nip		= $this->session->userdata('nip');
+			$nip		        = $this->session->userdata('nip');
 			
 
 			
@@ -531,7 +532,7 @@ class Pengurus_barang extends CI_Controller {
 			'kontrak' 		     => $kontrak,
 			'kode_lokasi' 		 => $kode_lokasi,
 			'status' 		     => $status,
-			'nip'		=> $this->session->userdata('nip')
+			'nip'		         => $this->session->userdata('nip')
 			
 			
 		);
@@ -612,6 +613,7 @@ class Pengurus_barang extends CI_Controller {
 			'kontrak' 		     =>$this->input->post("kontrak"),
 			'kode_lokasi' 		 =>$this->input->post("kode_lokasi"),
 			'status' 		     =>$this->input->post("status"),
+			'nip'		         => $this->session->userdata('nip')
 		);
 			
 		
@@ -702,6 +704,7 @@ class Pengurus_barang extends CI_Controller {
 			'kontrak' 		     => $this->input->post("kontrak"),
 			'kode_lokasi' 		 => $this->input->post("kode_lokasi"),
 			'status' 		 => $this->input->post("status"),
+			'nip'		         => $this->session->userdata('nip')
 		);	
 		if (!empty($_FILES['foto_fisik']['name'])) {
 			$upload = $this->_do_upload_kib_d();
@@ -787,6 +790,8 @@ class Pengurus_barang extends CI_Controller {
 		$kontrak 		    = $this->input->post("kontrak");
 		$kode_lokasi 		= $this->input->post("kode_lokasi");
 		$status 		    = $this->input->post("status");
+		$nip		        = $this->session->userdata('nip');
+
 
 		for($i = 0; $i < $jumlah; $i++)  {
 
@@ -808,6 +813,7 @@ class Pengurus_barang extends CI_Controller {
 			'kontrak' 		     => $kontrak,
 			'kode_lokasi' 		 => $kode_lokasi,
 			'status' 		     => $status,
+			'nip'		         => $this->session->userdata('nip')
 		);	
 
 		$register = $register + 1;
@@ -898,6 +904,7 @@ class Pengurus_barang extends CI_Controller {
 					'kontrak' 		     => $this->input->post("kontrak"),
 					'kode_lokasi' 		 => $this->input->post("kode_lokasi"),
 					'status' 		     => $this->input->post("status"),
+					'nip'		         => $this->session->userdata('nip')
 		);	
 		if (!empty($_FILES['foto_fisik']['name'])) {
 			$upload = $this->_do_upload_kib_f();

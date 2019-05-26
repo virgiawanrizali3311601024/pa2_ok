@@ -1052,7 +1052,6 @@ function download_kontrak_p_kibf($id_aset)
       $query = $this->db->get();
       return $query->result_array();
     
-     
 
     }
     

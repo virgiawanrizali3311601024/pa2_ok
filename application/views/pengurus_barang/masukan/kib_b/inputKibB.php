@@ -134,7 +134,7 @@
     <input type="file" name="kontrak" id="chooseFile" required="" accept=".pdf">
   </div>
 </div>
-<input type="hidden" name="random" value="<?php echo rand(100,1000000);?>" />
+
 <h1></h1>
 <button class="btn btn-primary" type="submit">Submit</button>
 <h1><small><small>*Kondisi = B:Baik, RR:Rusak Ringan, RB:Rusak Berat</small></small><br>
