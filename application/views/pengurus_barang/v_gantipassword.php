@@ -3,12 +3,9 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-5"><h4><b>Pengaturan Kata Sandi </b></h4>
-          </div>
-        </div>
-      </div>
+      <h1>
+       Kelola Kata Sandi
+      </h1>
     </section>
 
     <!-- Main content -->
@@ -29,7 +26,7 @@
         </div>
     <?php endif; ?>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
               <div class="col-md-11">
@@ -46,23 +43,23 @@
                 <?php echo form_open(''); ?>
                     <div class="box-body">
                         <div class="form-group">
-                            <label class="control-label col-xs-5">Password Lama</label>
+                            <label class="control-label col-xs-5">Kata Sandi Lama</label>
                             <div class="col-xs-7">
-                                <input name="pass_lama" value="<?php echo set_value('pass_lama');?>" placeholder="Password Lama" class="form-control" type="password">
+                                <input name="pass_lama" value="<?php echo set_value('pass_lama');?>" placeholder="Kata Sandi Lama" class="form-control" type="password">
                                 <?php echo form_error('pass_lama'); ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-5">Password Baru</label>
+                            <label class="control-label col-xs-5">Kata Sandi Baru</label>
                             <div class="col-xs-7">
-                                <input name="pass_baru1" value="<?php echo set_value('pass_baru1');?>" placeholder="Password Baru" class="form-control" type="password">
+                                <input name="pass_baru1" value="<?php echo set_value('pass_baru1');?>" placeholder="Kata Sandi Baru" class="form-control" type="password">
                                 <?php echo form_error('pass_baru1'); ?> 
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-xs-5">Ulangi Password</label>
+                            <label class="control-label col-xs-5">Ulangi Kata Sandi</label>
                             <div class="col-xs-7">
-                                <input name="pass_baru2" value="<?php echo set_value('pass_baru2');?>" placeholder="Ulangi Password" class="form-control" type="password">
+                                <input name="pass_baru2" value="<?php echo set_value('pass_baru2');?>" placeholder="Ulangi Kata Sandi" class="form-control" type="password">
                                
                             </div>
                         </div>

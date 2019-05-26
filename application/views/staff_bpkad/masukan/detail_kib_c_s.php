@@ -1,28 +1,23 @@
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4"><h4><b>Edit Data Pembukuan KIB C</b></h4>
-          </div>
-        </div>
-      </div>
+      <h1>
+       Detail Data Masukan KIB C
+        <small>Gedung dan Bangunan</small>
+      </h1>
     </section>
-
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
-              <div class="col-md-11">
-                <h3 class="box-title">Responsive Hover Table</h3>
+              <div class="col-md-11">   
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
-                        <a class="btn btn-default" href="<?php echo base_url().'staff_bpkad/masukan_kibc'?>"><i class="fa fa-arrow-left"> </i> Back</a>
+                        <a class="btn btn-default" href="<?php echo base_url().'staff_bpkad/masukan_kibc'?>"><i class="fa fa-arrow-left"> </i> Kembali</a>
                     </span>
               </div>
             </div>

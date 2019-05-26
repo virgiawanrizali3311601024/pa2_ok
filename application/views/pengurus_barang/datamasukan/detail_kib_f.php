@@ -18,7 +18,7 @@
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
-                        <a class="btn btn-default" href="<?php echo base_url().'pengurus_barang/Pmasukan_kiba'?>"><i class="fa fa-arrow-left"> </i> Kembali</a>
+                        <a class="btn btn-default" href="<?php echo base_url().'pengurus_barang/Pmasukan_kibf'?>"><i class="fa fa-arrow-left"> </i> Kembali</a>
                     </span>
               </div>
             </div>
