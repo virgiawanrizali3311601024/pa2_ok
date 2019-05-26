@@ -64,7 +64,7 @@
                         <td><?php echo $hasil->nomor_dokumen?></td>
                         <td><?php echo $hasil->tahun_bulan_mulai ?></td>
                         <td><?php echo $hasil->nomor_kode_tanah ?></td>
-                        <td><?php echo $hasil->nilai_kontrak ?></td>
+                        <td><?php echo number_format($hasil->nilai_kontrak,2,",",".");  ?></td>
                         <td><?php echo $hasil->asal_usul_pembiayaan ?></td>
               
                         <td>

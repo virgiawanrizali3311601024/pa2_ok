@@ -53,7 +53,7 @@
                         <td><?php echo $hasil->luas ?></td>
                         <td><?php echo $hasil->alamat ?></td>
                         <td><?php echo $hasil->tahun_bulan_mulai ?></td>
-                        <td><?php echo $hasil->nilai_kontrak ?></td>
+                        <td><?php echo number_format($hasil->nilai_kontrak,2,",",".");  ?></td>
                         <td><?php echo $hasil->asal_usul_pembiayaan ?></td>
                         <td><?php echo $hasil->status_tanah ?></td>    
                         <td><?php echo $hasil->keterangan ?></td>

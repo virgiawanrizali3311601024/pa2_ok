@@ -51,7 +51,7 @@
                         <td><?php echo $hasil->alamat ?></td>
                         <td><?php echo $hasil->status_tanah ?></td>
                         <td><?php echo $hasil->asal_usul ?></td>
-                        <td><?php echo $hasil->harga ?></td>
+                        <td><?php echo number_format($hasil->harga,2,",","."); ?></td>
                         <td><?php echo $hasil->kondisi ?></td>
                         <td><?php echo $hasil->keterangan ?></td>    
                         <td>

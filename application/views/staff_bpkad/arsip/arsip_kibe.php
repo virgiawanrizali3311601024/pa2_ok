@@ -73,7 +73,7 @@
                 <tbody>
                 </tbody>
               </table>
-        <a href="<?php echo base_url().'staff_bpkad/view_download_kiba'?>" class="btn btn-primary">Konversi Ke Excel</a>
+        <a href="<?php echo base_url().'staff_bpkad/view_download_kibe'?>" class="btn btn-primary">Konversi Ke Excel</a>
             </div>
             <!-- /.box-body -->
           </div>

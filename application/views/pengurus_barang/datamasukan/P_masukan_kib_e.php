@@ -49,7 +49,7 @@
                         <td><?php echo $hasil->judul_buku?></td>
                         <td><?php echo $hasil->tahun_pengadaan ?></td>
                         <td><?php echo $hasil->asal_usul ?></td>
-                        <td><?php echo $hasil->harga ?></td>   
+                        <td><?php echo number_format($hasil->harga,2,",",".");  ?></td>   
                       
                        
                         <td>

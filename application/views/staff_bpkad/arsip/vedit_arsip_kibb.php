@@ -129,7 +129,7 @@
                             </div>
                             <div class="col-xs-3">
                                 <label>Harga</label>
-                                <input name="harga" placeholder="Harga" value="<?php echo number_format($data->harga,2,",",".") ?>" class="form-control" type="text">
+                                <input name="harga" placeholder="Harga" value="<?php echo $data->harga; ?>" class="form-control" type="text">
                                 <?php echo form_error('harga'); ?>
                             </div>
                         </div>

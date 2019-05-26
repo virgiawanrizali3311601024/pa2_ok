@@ -1157,7 +1157,7 @@ class Pengurus_barang extends CI_Controller {
 			$this->pb->update_pmasukan_kiba($idaset,$namaaset,$kodeaset,$register,$luas,$tahunpengadaan,$alamat,$statustanah,
 										$tanggalsertifikat,$nomorsertifikat,$asalusul,$harga,$kondisi,$keterangan,
 										$fotofisik,$kontrak,$kodelokasi);
-			redirect('pengurus_barang/P_masukan_kib_a');
+			redirect('pengurus_barang/pmasukan_kiba');
 		}
 
 	function edit_pmasukan_kibb()
@@ -1190,45 +1190,11 @@ class Pengurus_barang extends CI_Controller {
 			$fotofisik = $this->input->post('foto_fisik');
 			$kontrak = $this->input->post('kontrak');
 
-			$this->load->library('ciqrcode'); //pemanggilan library QR CODE
-
-			$config['cacheable']	= true; //boolean, the default is true
-			$config['cachedir']		= './assets/'; //string, the default is application/cache/
-			$config['errorlog']		= './assets/'; //string, the default is application/logs/
-			$config['imagedir']		= './assets/berkas/qrcode/'; //direktori penyimpanan qr code
-			$config['quality']		= true; //boolean, the default is true
-			$config['size']			= '1024'; //interger, the default is 1024
-			$config['black']		= array(224,255,255); // array, default is array(255,255,255)
-			$config['white']		= array(70,130,180); // array, default is array(0,0,0)
-			$this->ciqrcode->initialize($config);
-
-			$image_name=$idaset.'.png'; //buat name dari qr code sesuai dengan nim
-
-			$params['data'] = ("		    Nama Aset: ".$namaaset."
-				Kode Aset: ".$kodeaset."
-				Register: ".$register."
-				Merk: ".$merk."
-				Ukuran: ".$ukuran."
-				Bahan: ".$bahan."
-				Tahun: ".$tahun."
-				Pabrik: ".$pabrik."
-				No. Rangka: ".$rangka."
-				No. Mesin: ".$mesin."
-				No. Polisi: ".$polisi."
-				Bpkb: ".$bpkb."
-				Asal Usul: ".$asalusul."
-				Harga: ".$harga."
-				Kode Lokasi: ".$kodelokasi); //data yang akan di jadikan QR CODE
-			//$params['data'] = $nim; 
-			$params['level'] = 'H'; //H=High
-			$params['size'] = 10;
-			$params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
-			$this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
-
+			
 
 			$this->pb->update_pmasukan_kibb($idaset,$kodeaset,$register,$namaaset,$merk,$ukuran,$bahan,$tahun,$lokasi,
 										$pabrik,$rangka,$mesin,$polisi,$bpkb,$asalusul,$penggunaan,$harga,$kondisi,
-										$keterangan,$kodelokasi,$fotofisik,$kontrak,$image_name);
+										$keterangan,$kodelokasi,$fotofisik,$kontrak);
 			redirect('Pengurus_barang/pmasukan_kibb');
 		}
 		function edit_Pmasukan_kibc()

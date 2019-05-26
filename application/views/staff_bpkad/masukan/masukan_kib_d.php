@@ -56,7 +56,7 @@
                         <td><?php echo $hasil->tahun_pengadaan ?></td>
                         <td><?php echo $hasil->status_tanah ?></td>
                         <td><?php echo $hasil->asal_usul ?></td>
-                        <td><?php echo $hasil->harga ?></td>   
+                        <td><?php echo number_format($hasil->harga,2,",",".");  ?></td>   
                         <td><?php echo $hasil->keterangan ?></td>
                         <td>
                             <a href="<?php echo base_url() ?>staff_bpkad/status_masukan_kibd/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-danger">Setujui Aset</a>

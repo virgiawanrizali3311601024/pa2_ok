@@ -1705,7 +1705,7 @@ function download_kontrak_p_kibf($id_aset)
 		}
 		function update_pmasukan_kibb($idaset,$kodeaset,$register,$namaaset,$merk,$ukuran,$bahan,$tahun,$lokasi,
 							$pabrik,$rangka,$mesin,$polisi,$bpkb,$asalusul,$penggunaan,$harga,$kondisi,
-							$keterangan,$kodelokasi,$fotofisik,$kontrak,$image_name)
+							$keterangan,$kodelokasi,$fotofisik,$kontrak)
 		{
 		$data = array(
 			'kode_aset' => $kodeaset,

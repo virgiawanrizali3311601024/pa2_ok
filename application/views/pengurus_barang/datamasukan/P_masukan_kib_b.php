@@ -56,7 +56,7 @@
                         <td><?php echo $hasil->no_polisi ?></td>
                         <td><?php echo $hasil->bpkb ?></td>
                         <td><?php echo $hasil->asal_usul ?></td>
-                        <td><?php echo $hasil->harga ?></td>
+                        <td><?php echo number_format($hasil->harga,2,",",".");  ?></td>
                         <td>  
                         <a href="<?php echo base_url() ?>Pengurus_barang/detail_kibb/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Detail</a>
                         <!-- <a onclick="detail_kibb_masukan(<?php echo $hasil->id_aset ?>)" class="btn btn-sm btn-success">Detail</a> -->

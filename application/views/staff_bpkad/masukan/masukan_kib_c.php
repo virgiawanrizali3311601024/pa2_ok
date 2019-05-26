@@ -67,7 +67,7 @@
                         <td><?php echo $hasil->tanggal_dokumen ?></td>
                         <td><?php echo $hasil->status_tanah ?></td>
                         <td><?php echo $hasil->nomor_kode_tanah ?></td>
-                        <td><?php echo $hasil->harga ?></td>    
+                        <td><?php echo number_format($hasil->harga,2,",",".");  ?></td>    
                        
                         <td>
                             <a href="<?php echo base_url() ?>staff_bpkad/status_masukan_kibc/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-danger">Setujui Aset</a>

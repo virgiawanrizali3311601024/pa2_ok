@@ -50,7 +50,7 @@
                         <td><?php echo $hasil->tahun_pengadaan ?></td>
                         <td><?php echo $hasil->alamat ?></td>
                         <td><?php echo $hasil->status_tanah ?></td>
-                        <td><?php echo $hasil->harga ?></td>
+                        <td><?php echo number_format($hasil->harga,2,",",".");  ?></td>
                         <td>
                             <a href="<?php echo base_url() ?>Pengurus_barang/detail_kibc/<?php echo $hasil->id_aset ?>" class="btn btn-sm btn-success">Detail</a>
                             <!-- <a onclick="detail_kib_masukan(<?php echo $hasil->id_aset ?>)" class="btn btn-sm btn-success">Detail</a> -->
