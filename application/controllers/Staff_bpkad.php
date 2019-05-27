@@ -1327,6 +1327,16 @@ class Staff_bpkad extends CI_Controller {
 
 		function hapus_arsip_kiba($id_aset)
 		{
+			$data = $this->db->select("*")
+											->from("kib_a")
+											->where("id_aset",$id_aset)
+											->get()
+											->row();
+			if(file_exists('assets/berkas/KIB A/'.$data->foto_fisik) && $data->foto_fisik)
+				unlink('assets/berkas/KIB A/'.$data->foto_fisik);
+			if(file_exists('assets/berkas/KIB A/'.$data->kontrak) && $data->kontrak)
+				unlink('assets/berkas/KIB A/'.$data->kontrak);
+			
 			$this->sb->delete_arsip_kiba($id_aset);
 			echo json_encode(array("status" => TRUE));
 		}
@@ -1682,6 +1692,18 @@ class Staff_bpkad extends CI_Controller {
 
 		function hapus_arsip_kibb($id_aset)
 		{
+			$data = $this->db->select("*")
+											->from("kib_b")
+											->where("id_aset",$id_aset)
+											->get()
+											->row();
+			if(file_exists('assets/berkas/KIB B/'.$data->foto_fisik) && $data->foto_fisik)
+				unlink('assets/berkas/KIB B/'.$data->foto_fisik);
+			if(file_exists('assets/berkas/KIB B/'.$data->kontrak) && $data->kontrak)
+				unlink('assets/berkas/KIB B/'.$data->kontrak);
+			if(file_exists('assets/berkas/qrcode/'.$data->qrcode) && $data->qrcode)
+				unlink('assets/berkas/qrcode/'.$data->qrcode);
+
 			$this->sb->delete_arsip_kibb($id_aset);
 			echo json_encode(array("status" => TRUE));
 		}
@@ -2019,6 +2041,16 @@ class Staff_bpkad extends CI_Controller {
 
 		function hapus_arsip_kibc($id_aset)
 		{
+			$data = $this->db->select("*")
+											->from("kib_c")
+											->where("id_aset",$id_aset)
+											->get()
+											->row();
+			if(file_exists('assets/berkas/KIB C/'.$data->foto_fisik) && $data->foto_fisik)
+				unlink('assets/berkas/KIB C/'.$data->foto_fisik);
+			if(file_exists('assets/berkas/KIB C/'.$data->kontrak) && $data->kontrak)
+				unlink('assets/berkas/KIB C/'.$data->kontrak);
+
 			$this->sb->delete_arsip_kibc($id_aset);
 			echo json_encode(array("status" => TRUE));
 		}
@@ -2358,6 +2390,16 @@ class Staff_bpkad extends CI_Controller {
 
 		function hapus_arsip_kibd($id_aset)
 		{
+			$data = $this->db->select("*")
+											->from("kib_d")
+											->where("id_aset",$id_aset)
+											->get()
+											->row();
+			if(file_exists('assets/berkas/KIB D/'.$data->foto_fisik) && $data->foto_fisik)
+				unlink('assets/berkas/KIB D/'.$data->foto_fisik);
+			if(file_exists('assets/berkas/KIB D/'.$data->kontrak) && $data->kontrak)
+				unlink('assets/berkas/KIB D/'.$data->kontrak);
+
 			$this->sb->delete_arsip_kibd($id_aset);
 			echo json_encode(array("status" => TRUE));
 		}
@@ -2653,6 +2695,16 @@ class Staff_bpkad extends CI_Controller {
 
 		function hapus_arsip_kibe($id_aset)
 		{
+			$data = $this->db->select("*")
+											->from("kib_e")
+											->where("id_aset",$id_aset)
+											->get()
+											->row();
+			if(file_exists('assets/berkas/KIB E/'.$data->foto_fisik) && $data->foto_fisik)
+				unlink('assets/berkas/KIB E/'.$data->foto_fisik);
+			if(file_exists('assets/berkas/KIB E/'.$data->kontrak) && $data->kontrak)
+				unlink('assets/berkas/KIB E/'.$data->kontrak);
+
 			$this->sb->delete_arsip_kibe($id_aset);
 			echo json_encode(array("status" => TRUE));
 		}
@@ -2975,6 +3027,16 @@ class Staff_bpkad extends CI_Controller {
 
 		function hapus_arsip_kibf($id_aset)
 		{
+			$data = $this->db->select("*")
+											->from("kib_f")
+											->where("id_aset",$id_aset)
+											->get()
+											->row();
+			if(file_exists('assets/berkas/KIB F/'.$data->foto_fisik) && $data->foto_fisik)
+				unlink('assets/berkas/KIB F/'.$data->foto_fisik);
+			if(file_exists('assets/berkas/KIB F/'.$data->kontrak) && $data->kontrak)
+				unlink('assets/berkas/KIB F/'.$data->kontrak);
+
 			$this->sb->delete_arsip_kibf($id_aset);
 			echo json_encode(array("status" => TRUE));
 		}
