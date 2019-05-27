@@ -23,7 +23,6 @@
           <div class="box">
             <div class="box-header">
               <div class="col-md-11">
-                <h3 class="box-title">Responsive Hover Table</h3>
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
@@ -85,7 +84,7 @@
                             </div>
                             <div class="col-xs-3">
                                 <label>Tanggal Dokumen</label>
-                                <input name="tanggal_dokumen" value="<?php echo $data->tanggal_dokumen; ?>" placeholder="Tanggal Dokumen" class="form-control" type="text">
+                                <input name="tanggal_dokumen" value="<?php echo $data->tanggal_dokumen; ?>" placeholder="Tanggal Dokumen" class="form-control" type="date">
                                 <?php echo form_error('tanggal_dokumen'); ?>
                             </div>
                         </div>

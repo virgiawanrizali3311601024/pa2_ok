@@ -20,8 +20,6 @@
         <div class="col-xs-13">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Responsive Hover Table</h3>
-              
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">

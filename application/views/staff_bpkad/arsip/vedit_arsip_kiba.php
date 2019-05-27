@@ -24,7 +24,6 @@
           <div class="box">
             <div class="box-header">
               <div class="col-md-11">
-                <h3 class="box-title">Responsive Hover Table</h3>
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
@@ -90,7 +89,7 @@
                             <div class="col-xs-3">
                             <div class="input-group date">
                                 <label>Tanggal Sertifikat</label>
-                                <input name="tanggal_sertifikat" di="datepicker" value="<?php echo $data->tanggal_sertifikat; ?>" class="form-control" type="text">
+                                <input name="tanggal_sertifikat" di="datepicker" value="<?php echo $data->tanggal_sertifikat; ?>" class="form-control" type="date">
                             </div>
                                 <?php echo form_error('tanggal_setifikat'); ?>
                                 
