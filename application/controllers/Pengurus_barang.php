@@ -1659,7 +1659,7 @@ function arsip_kiba()
 			$row[] = $kiba->status_tanah;
 			$row[] = $kiba->asal_usul;
 
-			$row[] = $kiba->harga;
+			$row[] = number_format($kiba->harga,2,",",".");
 			$row[] = $kiba->kondisi;
 			$row[] = $kiba->keterangan;
 						
@@ -1833,7 +1833,7 @@ function arsip_kibb()
 			
 			$row[] = $kibb->bahan;
 			$row[] = $kibb->tahun_pengadaan;
-			$row[] = $kibb->harga;		
+			$row[] = number_format($kibb->harga,2,",",".");		
 			$row[] = $kibb->keterangan;				
 		
 			$data[] = $row;
@@ -2035,7 +2035,7 @@ function arsip_kibc()
 			$row[] = $kibc->luas_tanah;
 			$row[] = $kibc->asal_usul;
 
-			$row[] = $kibc->harga;			
+			$row[] = number_format($kibc->harga,2,",",".");			
 			//$row[] = $kibc->keterangan;
 			//$row[] = $kibc->foto_fisik;
 			//$row[] = $kibc->kontrak;
@@ -2234,7 +2234,7 @@ function arsip_kibd()
 			//$row[] = $kibd->status_tanah;
 			//$row[] = $kibd->nomor_kode_tanah;
 			$row[] = $kibd->asal_usul;
-			$row[] = $kibd->harga;
+			$row[] = number_format($kibd->harga,2,",",".");
 
 			//$row[] = $kibd->kondisi;			
 			//$row[] = $kibd->keterangan;
@@ -2430,7 +2430,7 @@ function arsip_kibe()
 			//$row[] = $kibe->nomor_dokumen;
 			//$row[] = $kibe->tanggal_dokumen;
 			$row[] = $kibe->asal_usul;
-			$row[] = $kibe->harga;
+			$row[] = number_format($kibe->harga,2,",",".");
 
 			//$row[] = $kibe->kondisi;			
 			//$row[] = $kibe->keterangan;
@@ -2609,7 +2609,7 @@ function arsip_kibf()
 			$row[] = $kibf->tahun_bulan_mulai;
 
 			//$row[] = $kibf->nomor_kode_tanah;
-			$row[] = $kibf->nilai_kontrak;
+			$row[] = number_format($kibf->nilai_kontrak,2,",",".");
 			$row[] = $kibf->asal_usul_pembiayaan;
 			//$row[] = $kibf->status_tanah;			
 			//$row[] = $kibf->keterangan;

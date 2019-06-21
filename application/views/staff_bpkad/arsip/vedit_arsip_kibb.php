@@ -23,7 +23,6 @@
           <div class="box">
             <div class="box-header">
               <div class="col-md-11">
-                <h3 class="box-title">Responsive Hover Table</h3>
               </div>
               <div class="col-md-1">
                     <span class="pull-left">
